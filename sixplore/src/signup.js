@@ -15,8 +15,8 @@ export default function Signup() {
               <div class = "signup-fields">
               <input type = "textbox" placeholder="Name"/>
               <input type = "textbox" placeholder="Email"/>
-              <input type = "textbox" placeholder="Password"/>
-              <input type = "textbox" placeholder="Confirm your password"/>
+              <input type = "password" placeholder="Password"/>
+              <input type = "password" placeholder="Confirm your password"/>
           </div>
           
           <button type="submit"><b>Sign up</b></button>
