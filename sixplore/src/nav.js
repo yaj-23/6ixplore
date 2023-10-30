@@ -10,6 +10,8 @@ export default function Navbar() {
         <ul>
         <li><Link to='/dashboard'>Dashboard</Link></li>
         <li><Link to='/profile'>Profile</Link></li>
+        <li><Link to ='/signup'> Signup</Link></li>
+
         {/* <li><Link to='/about'>About</Link></li> */}
 
         </ul>
