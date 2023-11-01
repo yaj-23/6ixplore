@@ -1,15 +1,12 @@
 import React from 'react'
 import './signup.css'
+import Navbar from '../components/navbar/nav'
 
 export default function Signup() {
   return (
     <div>
-      <div class="topnav" id="myTopnav">
-          <a href="#profile">Profile</a>
-          <a href="#explore">Explore</a>
-          <a href="#about">About</a>
-        </div>
-
+      
+        <Navbar/>
         <div class="signup" id = "signup">
           <h2> Sign up</h2>
               <div class = "signup-fields">
