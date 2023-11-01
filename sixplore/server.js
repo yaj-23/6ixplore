@@ -9,9 +9,17 @@ app.listen(PORT, () => {
     console.log("Server listening on port", PORT);
 });
 
-app.get("/test", (req, res) => {
-    res.send("Test");
+// User Auth API Calls
+app.get("/login", (req, res) => {
+    res.send("Login");
 });
 
+// User Profile API Calls
+app.get("/user", (req, res) => {
+    res.send("User Profile");
+});
 
-
+// Location API Calls
+app.get("/explore", (req, res) => {
+    res.send("Exploration Items");
+});
