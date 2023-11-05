@@ -1,4 +1,5 @@
 const express = require('express');
+const userModel = 
 
 const PORT = process.env.PORT || 3000;
 
@@ -15,8 +16,19 @@ app.get("/login", (req, res) => {
 });
 
 // User Profile API Calls
-app.get("/user", (req, res) => {
-    res.send("User Profile");
+app.get("/user/:id", (req, res) => {
+    // res.send(`success`);
+    const user = req.params.id;
+    console.log(user);
+
+    if (user === "John")
+        res.send("success");
+    else    
+        res.send("fail");
+    // console.log("test");
+    // for (const key in req.query) {
+    //     console.log(key, req.query[key]);
+    // }
 });
 
 // Location API Calls
