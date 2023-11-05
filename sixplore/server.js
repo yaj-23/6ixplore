@@ -1,13 +1,20 @@
 const express = require('express');
-const userModel = 
+const { dbInit, userQuery } = require('../sixplore/database');
 
 const PORT = process.env.PORT || 3000;
 
 const app = express();
 app.use(express.json());
 
+
 app.listen(PORT, () => {
     console.log("Server listening on port", PORT);
+    try {
+        dbInit();
+    } catch (error) {
+        console.error(error);
+        process.exit(1);
+    }
 });
 
 // User Auth API Calls
@@ -17,18 +24,22 @@ app.get("/login", (req, res) => {
 
 // User Profile API Calls
 app.get("/user/:id", (req, res) => {
-    // res.send(`success`);
     const user = req.params.id;
-    console.log(user);
-
-    if (user === "John")
-        res.send("success");
-    else    
-        res.send("fail");
-    // console.log("test");
-    // for (const key in req.query) {
-    //     console.log(key, req.query[key]);
-    // }
+    const userSearch = userQuery(user);
+    
+    userSearch
+    .then(userInfo => { 
+        if (userInfo === null) {
+            console.error("User not found");
+            res.send("User not found");
+        }
+        else             
+            res.send(userInfo);
+    })
+    .catch(error => {
+        console.log(error);
+        res.send("Database error");     
+    })
 });
 
 // Location API Calls
