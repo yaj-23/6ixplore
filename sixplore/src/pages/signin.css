@@ -66,4 +66,11 @@ button{
     background-color: white;
 }
 
+.signin p{
+    margin-top: 1.2%;
+}
 
+.signin a{
+    text-decoration: solid;
+    
+}

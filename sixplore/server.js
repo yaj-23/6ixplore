@@ -1,25 +1,15 @@
 const express = require('express');
+const authRoutes = require('./routes/AuthRoutes');
+const exploreRoutes = require('./routes/ExploreRoutes');
+const userRoutes = require('./routes/UserRoutes');
 
 const PORT = process.env.PORT || 3000;
 
 const app = express();
 app.use(express.json());
 
+app.use('/', authRoutes, exploreRoutes, userRoutes);
+
 app.listen(PORT, () => {
     console.log("Server listening on port", PORT);
-});
-
-// User Auth API Calls
-app.get("/login", (req, res) => {
-    res.send("Login");
-});
-
-// User Profile API Calls
-app.get("/user", (req, res) => {
-    res.send("User Profile");
-});
-
-// Location API Calls
-app.get("/explore", (req, res) => {
-    res.send("Exploration Items");
 });
