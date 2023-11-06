@@ -7,9 +7,9 @@ export default function Signup() {
     <div>
       
         <Navbar/>
-        <div class="signup" id = "signup">
+        <div className="signup" id = "signup">
           <h2> Sign up</h2>
-              <div class = "signup-fields">
+              <div className = "signup-fields">
               <input type = "textbox" placeholder="Name"/>
               <input type = "textbox" placeholder="Email"/>
               <input type = "password" placeholder="Password"/>
