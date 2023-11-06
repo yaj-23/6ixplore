@@ -1,0 +1,37 @@
+.dashboard-con{
+    margin-top: 100px;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.dashboard-image{
+    background-color:lightgrey;
+    height: 400px;
+    width: 400px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.dashboard-description{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dashboard-description h1{
+    font-weight: 600;
+}
+.dashboard-description button{
+    width: 10rem;
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 25px;
+    margin-left: 1.4rem;
+}
+
+.dashboard-ratings{
+    display: flex;
+    flex-direction: row;
+}
