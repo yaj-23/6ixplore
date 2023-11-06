@@ -2,15 +2,15 @@ body{
     position: relative;
 }
 
-.signup h2{
+.signin h2{
         margin-left: 0.5rem;
         margin-bottom: 0.7rem;
         font-family: 'Allura', cursive;
         font-size: 5rem;
     }
     
-.signup-fields input{
-    width: 25rem;
+.signin-fields input{
+        width: 25rem;
         display: flex;
         flex-direction: column;
         font-size: 20px;
@@ -22,13 +22,13 @@ body{
     }
 
 
-.signup button{
-    width: 10rem;
+.signin img{
+    width: 5rem;
     padding: 10px;
     border-radius: 20px;
-    margin-top: 25px;
-    margin-left: 0.4rem;
-    background-color: white;
+    margin-top: 0.1px;
+    margin-left: 10.8rem;
+
 }
 
 .topnav{
@@ -48,7 +48,7 @@ body{
     color:black;
 }
 
-.signup {
+.signin {
    display: flex;
    align-items: center;
    justify-content: center;
@@ -58,4 +58,19 @@ body{
    
 }
 
+button{
+    padding:5px;
+    width: 10rem;
+    height: 3rem;
+    border-radius: 16px;
+    background-color: white;
+}
 
+.signin p{
+    margin-top: 1.2%;
+}
+
+.signin a{
+    text-decoration: solid;
+    
+}
