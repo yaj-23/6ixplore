@@ -22,8 +22,8 @@ async function dbInit ()
         db.model("ExplorationItem", ExplorationItem.schema);
 
         // Adding new entries
-        db.createCollection(User.collection.name);
-        db.createCollection(ExplorationItem.collection.name);
+        // db.createCollection(User.collection.name);
+        // db.createCollection(ExplorationItem.collection.name);
 
         // Creating 1 sample exploration case
         const testExplorationItem = new ExplorationItem({
@@ -77,14 +77,11 @@ async function addDummyUserData(size, testExplorationItem){
         }
         return response.json();
     })
-    .then(data => {
-        if (data === "error") {
-            // throw(new Error("API not working"));
-            return new Error("API not working")
-        } else 
-            data.forEach(async(user) => addUser(user, testExplorationItem));
-    })
-    .catch(error => console.log(error));
+    .then(data => data.forEach(async(user) => addUser(user, testExplorationItem)))
+    .catch(error => {
+        console.log(error);
+        throw(new Error(`Error: ${error}\nSomething went wrong with the Dummy Data API`));
+    });
 }
 
 /**
@@ -98,7 +95,7 @@ async function addUser(user, tempExplorationItem) {
         email: user.email,
         password: user.password,
         favourites: tempExplorationItem,
-        plans: {user: "tempExploration", planItem: tempExplorationItem}
+        plans: {name: "temp item", planItem: tempExplorationItem}
     })
 
     try {
@@ -114,12 +111,12 @@ async function addUser(user, tempExplorationItem) {
  * @param {String} name 
  * @returns The User info in JSON format
  */
-async function userQuery(name) {
+async function searchUser(name) {
     const user = await User.findOne({ name: name });
     return user;
 }
 
 module.exports = {
     dbInit,
-    userQuery
+    searchUser
 }

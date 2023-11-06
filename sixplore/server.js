@@ -1,5 +1,5 @@
 const express = require('express');
-const { dbInit, userQuery } = require('../sixplore/database');
+const { dbInit, searchUser } = require('../sixplore/database');
 
 const PORT = process.env.PORT || 3000;
 
@@ -24,10 +24,10 @@ app.get("/login", (req, res) => {
 
 // User Profile API Calls
 app.get("/user/:id", (req, res) => {
-    const user = req.params.id;
-    const userSearch = userQuery(user);
+    const userName = req.params.id;
+    const user = searchUser(userName);
     
-    userSearch
+    user
     .then(userInfo => { 
         if (userInfo === null) {
             console.error("User not found");
