@@ -1,9 +1,15 @@
 const express = require('express');
-
 const router = express.Router();
+const searchUser = require('../database');
+
+router.get("/user/:name", (req,res) => {
+    res.send("test");
+})
+
 
 router.get("/users/:userId/favourites", (req, res) => {
     // Get all favourited items of user
+    console.log(req.params);
     res.send("Get Favourite Items");
 });
 

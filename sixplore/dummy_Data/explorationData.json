@@ -1,0 +1,182 @@
+[
+  {
+    "name": "Maplewood National Park",
+    "description": "Explore the beauty of Canadian wilderness",
+    "address": "123 Maplewood Dr, Toronto, ON, Canada",
+    "stars": 4.5,
+    "type": "ACTIVITY",
+    "tags": ["nature", "hiking", "outdoors"],
+    "pictureURL": "http://example.com/maplewood.jpg"
+  },
+  {
+    "name": "Chez Pierre's Pâtisserie",
+    "description": "Indulge in exquisite French pastries",
+    "address": "456 Croissant Rouge, Montreal, QC, Canada",
+    "stars": 4.2,
+    "type": "FOOD",
+    "tags": ["pastries", "French", "café"],
+    "pictureURL": "http://example.com/chezpierres.jpg"
+  },
+  {
+    "name": "Canadian Heritage Museum",
+    "description": "A journey through Canada's rich history",
+    "address": "789 Rue Historique, Ottawa, ON, Canada",
+    "stars": 4.8,
+    "type": "PLACE",
+    "tags": ["history", "museum", "culture"],
+    "pictureURL": "http://example.com/canadianheritage.jpg"
+  },
+  {
+    "name": "West Coast Sushi Fusion",
+    "description": "Experience the blend of Japanese and West Coast flavors",
+    "address": "101 Pacific Ave, Vancouver, BC, Canada",
+    "stars": 4.9,
+    "type": "FOOD",
+    "tags": ["sushi", "fusion", "Japanese"],
+    "pictureURL": "http://example.com/wcsushifusion.jpg"
+  },
+  {
+    "name": "Rocky Mountain Adventure Park",
+    "description": "An adrenaline-packed adventure in the Rockies",
+    "address": "202 Rocky Rd, Banff, AB, Canada",
+    "stars": 4.7,
+    "type": "ACTIVITY",
+    "tags": ["adventure", "hiking", "outdoors"],
+    "pictureURL": "http://example.com/rockymountain.jpg"
+  },
+  {
+    "name": "Québecois Bistro",
+    "description": "Savor the flavors of traditional Québecois cuisine",
+    "address": "303 Rue de la Ville, Québec City, QC, Canada",
+    "stars": 4.4,
+    "type": "FOOD",
+    "tags": ["Québecois", "bistro", "Canadian"],
+    "pictureURL": "http://example.com/quebecoisbistro.jpg"
+  },
+  {
+    "name": "Northern Lights Art Gallery",
+    "description": "Celebrate Canadian art in the heart of the North",
+    "address": "404 Aurora Ave, Yellowknife, NT, Canada",
+    "stars": 4.6,
+    "type": "PLACE",
+    "tags": ["art", "gallery", "Canadian"],
+    "pictureURL": "http://example.com/northernlights.jpg"
+  },
+  {
+    "name": "Poutine Palace",
+    "description": "A taste of Canada's iconic comfort food",
+    "address": "505 Frites Street, Montréal, QC, Canada",
+    "stars": 4.5,
+    "type": "FOOD",
+    "tags": ["poutine", "comfort food", "Canadian"],
+    "pictureURL": "http://example.com/poutinepalace.jpg"
+  },
+  {
+    "name": "Whistler Mountain Adventure Park",
+    "description": "Experience thrilling adventures in the Whistler mountains",
+    "address": "123 Summit Dr, Whistler, BC, Canada",
+    "stars": 4.8,
+    "type": "ACTIVITY",
+    "tags": ["adventure", "outdoors", "mountains"],
+    "pictureURL": "http://example.com/whistleradventure.jpg"
+  },
+  {
+    "name": "Maple Leaf Café",
+    "description": "A cozy café with a touch of Canadian charm",
+    "address": "456 Maple Ave, Ottawa, ON, Canada",
+    "stars": 4.3,
+    "type": "FOOD",
+    "tags": ["café", "Canadian", "pastries"],
+    "pictureURL": "http://example.com/mapleleafcafe.jpg"
+  },
+  {
+    "name": "Maritime Maritime Heritage Museum",
+    "description": "Explore the maritime history of Eastern Canada",
+    "address": "789 Harbour Rd, Halifax, NS, Canada",
+    "stars": 4.6,
+    "type": "PLACE",
+    "tags": ["maritime", "history", "museum"],
+    "pictureURL": "http://example.com/maritimemuseum.jpg"
+  },
+  {
+    "name": "Montreal Bagel Bakery",
+    "description": "Freshly baked Montreal-style bagels",
+    "address": "101 Bagel Blvd, Montréal, QC, Canada",
+    "stars": 4.7,
+    "type": "FOOD",
+    "tags": ["bagels", "bakery", "Montreal"],
+    "pictureURL": "http://example.com/montrealbagel.jpg"
+  },
+  {
+    "name": "Jasper National Park",
+    "description": "Explore the stunning landscapes of the Canadian Rockies",
+    "address": "123 Mountain View Dr, Jasper, AB, Canada",
+    "stars": 4.9,
+    "type": "ACTIVITY",
+    "tags": ["nature", "hiking", "outdoors"],
+    "pictureURL": "http://example.com/jasperpark.jpg"
+  },
+  {
+    "name": "Le Petit Québecois",
+    "description": "A taste of authentic Québecois cuisine",
+    "address": "456 Rue du Fromage, Québec City, QC, Canada",
+    "stars": 4.5,
+    "type": "FOOD",
+    "tags": ["Québecois", "restaurant", "Canadian"],
+    "pictureURL": "http://example.com/lepetitquebecois.jpg"
+  },
+  {
+    "name": "Pacific Coast Aquarium",
+    "description": "Discover marine life on the west coast",
+    "address": "789 Oceanfront Ave, Vancouver, BC, Canada",
+    "stars": 4.7,
+    "type": "PLACE",
+    "tags": ["aquarium", "marine life", "west coast"],
+    "pictureURL": "http://example.com/pacificcoastaquarium.jpg"
+  },
+  {
+    "name": "Timberland Diner",
+    "description": "Hearty Canadian comfort food in a rustic setting",
+    "address": "101 Timber Rd, Victoria, BC, Canada",
+    "stars": 4.6,
+    "type": "FOOD",
+    "tags": ["diner", "comfort food", "Canadian"],
+    "pictureURL": "http://example.com/timberlanddiner.jpg"
+  },
+  {
+    "name": "Banff National Park",
+    "description": "Experience the beauty of the Canadian Rockies",
+    "address": "123 Banff Ave, Banff, AB, Canada",
+    "stars": 4.9,
+    "type": "ACTIVITY",
+    "tags": ["nature", "hiking", "mountains"],
+    "pictureURL": "http://example.com/banffpark.jpg"
+  },
+  {
+    "name": "Boulangerie de Montréal",
+    "description": "Artisanal bakery with Montreal-style bagels",
+    "address": "456 Rue Saint-Viateur, Montréal, QC, Canada",
+    "stars": 4.7,
+    "type": "FOOD",
+    "tags": ["bakery", "bagels", "Montreal"],
+    "pictureURL": "http://example.com/boulangeriemontreal.jpg"
+  },
+  {
+    "name": "Maritime History Center",
+    "description": "Dive into the maritime history of the Atlantic provinces",
+    "address": "789 Waterfront Dr, Halifax, NS, Canada",
+    "stars": 4.5,
+    "type": "PLACE",
+    "tags": ["maritime", "history", "museum"],
+    "pictureURL": "http://example.com/maritimehistory.jpg"
+  },
+  {
+    "name": "Victoria Tea House",
+    "description": "Enjoy a traditional afternoon tea in British Columbia",
+    "address": "101 Empress Ave, Victoria, BC, Canada",
+    "stars": 4.8,
+    "type": "FOOD",
+    "tags": ["tea", "afternoon tea", "British Columbia"],
+    "pictureURL": "http://example.com/victoriateahouse.jpg"
+  }
+]

@@ -2,6 +2,7 @@ const express = require('express');
 const authRoutes = require('./routes/AuthRoutes');
 const exploreRoutes = require('./routes/ExploreRoutes');
 const userRoutes = require('./routes/UserRoutes');
+const db = require('../sixplore/database')
 
 const PORT = process.env.PORT || 3000;
 
@@ -13,7 +14,7 @@ app.use('/', authRoutes, exploreRoutes, userRoutes);
 app.listen(PORT, () => {
     console.log("Server listening on port", PORT);
     try {
-        dbInit();
+        db.init();
     } catch (error) {
         console.error(error);
         process.exit(1);
