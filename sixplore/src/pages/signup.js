@@ -1,6 +1,7 @@
 import React from 'react'
 import './signup.css'
 import Navbar from '../components/navbar/nav'
+import { Button } from '../components/button/Button'
 
 export default function Signup() {
   return (
@@ -15,8 +16,9 @@ export default function Signup() {
               <input type = "password" placeholder="Password"/>
               <input type = "password" placeholder="Confirm your password"/>
           </div>
-          
-          <button type="submit"><b>Sign up</b></button>
+          <Button buttonColor='primary' buttonSize='btn-medium' buttonStyle='btn-primary'>
+            Sign up
+          </Button>
       </div>
 
     </div>
