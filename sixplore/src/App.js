@@ -5,7 +5,6 @@ import Navbar from "./components/navbar/nav";
 function App() {
   return (
     <>
-      Test
       <Navbar />
     </>
   );
