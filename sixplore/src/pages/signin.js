@@ -2,6 +2,7 @@ import React from 'react'
 import './signin.css'
 import Navbar from '../components/navbar/nav'
 import account from '../assets/account.svg'
+import { Button } from '../components/button/Button'
 
 export default function signin() {
   return (
@@ -16,7 +17,7 @@ export default function signin() {
           <input type = "password" placeholder="Password"/>
       </div>
       
-      <button type="submit"><b>Sign in</b></button>
+      <Button buttonColor='primary' buttonSize='btn-medium' buttonStyle='btn-primary'>Sign in</Button>
       <p>Don't have an account? <a href="./signup"><b>Create one</b></a></p>
   </div>
 

@@ -1,0 +1,48 @@
+.btn-medium {
+    border-radius: 10px;
+    font-size: 3vw;
+    cursor: pointer;
+  }
+  
+  .btn-primary { 
+    width: 10vw;
+    height: 50px;
+    margin-top: 30px;
+    margin-right: 2vw;
+    border: none;
+    font-size: 3vw;
+    font-family: "SF Thin", sans-serif;
+    font-weight: bold;
+    transform: scale(1);
+    transition: all 0.3s ease-out;
+  }
+  .btn-primary:hover{
+    transform: scale(1.2);
+    transition: all 0.3s ease-out;
+  }
+  
+  .primary {
+    background: white;
+    color: black;
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 20px;
+    font-weight: 500; 
+    border: 1px solid;
+    border-color: rgba(0, 0, 0, 0.3);
+    justify-content: center;
+  }
+
+  .primary:hover {
+    color: #4158D0;
+    font-weight: 100; 
+  }
+  
+  
+  @media screen and (max-width: 960px){
+    .btn-primary{
+      width: 45vw;
+      justify-content: center;
+      height: 50px;
+    }
+  }
