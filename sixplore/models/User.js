@@ -9,7 +9,7 @@ let userSchema = new Schema({
     favourites: [{ type: Schema.Types.ObjectId, ref: 'ExplorationItem' }],
     plans: [{
         name: { type: String, require: true },
-        planItem: [{ type: Schema.Types.ObjectId, ref: 'ExplorationItem' }]
+        planItem: { type: Schema.Types.ObjectId, ref: 'ExplorationItem' }
     }]
 });
 

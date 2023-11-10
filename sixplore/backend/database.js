@@ -20,7 +20,7 @@ const dbName = "test";
 async function init () 
 {
     try{
-        await mongoose.connect(`mongodb://127.0.0.1:27017/${dbName}`);
+        await mongoose.connect(`mongodb+srv://yadu:feFiVIVegMr3aITl@6ixplore.gt56rc8.mongodb.net/${dbName}`);
         const db = mongoose.connection;
 
         // Resetting DB entries so it doesnt stack every run
