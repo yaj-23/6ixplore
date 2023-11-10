@@ -1,0 +1,62 @@
+.full {
+    margin-top: 10%;
+}
+
+.image {
+    Position: absolute;
+    right: 0;
+    width: 60%;
+}
+
+.background {
+    width: 100%;
+}
+
+.container {
+    position: absolute;
+    margin-left: 1%;
+}
+
+.text1 {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    margin-top: 5%;
+    font-size: clamp(1rem, 1rem + 9vw, 8rem);
+}
+
+.text2 {
+    font-family: "Allura", cursive;
+    font-size: clamp(4rem, 1rem + 10vw, 11rem);
+    font-weight: 1;
+}
+
+.description {
+    max-width: 76em;
+    margin-top: -8%;
+}
+
+.description text {
+    min-height: 3em;
+    line-height: 1.2;
+    font-size: clamp(0.1rem, 0.1rem + 3vw, 1.57rem);
+    font-family: 'Arial', sans-serif;
+    position: relative;
+}
+
+/* @media only screen and (max-width: 1845px) { */
+
+@media only screen and (max-width: 1845px) {
+    .full {
+        display: grid;
+    }
+
+    .image {
+        Position: relative;
+        width: 50vw;
+    }
+
+    .container {
+        position: relative;
+        margin-top: -6%;
+    }
+}
