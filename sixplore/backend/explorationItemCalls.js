@@ -12,6 +12,7 @@ async function addExplorationItemToDB(item) {
 
     } catch (error) {
         console.error(error);
+        throw Error("Some Error Occured: ", error);
     }
 }
 
@@ -22,6 +23,7 @@ async function getExplorationItemFromDB(itemId) {
         return item;
     } catch (error) {
         console.error(error);
+        throw Error("Some Error Occured: ", error);
     }
 }
 

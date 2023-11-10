@@ -12,6 +12,7 @@ async function addUserToDB(user) {
         return true
     }catch(error){
         console.error(error);
+        throw Error("Some Error Occured: ", error);
     }
 }
 
@@ -26,6 +27,7 @@ async function getUserFromDB(userId) {
         return user;
     } catch (error) {
         console.error(error);    
+        throw Error("Some Error Occured: ", error);
     }    
 }
 
