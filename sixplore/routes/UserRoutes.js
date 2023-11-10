@@ -1,10 +1,16 @@
 const express = require('express');
 const router = express.Router();
+
+// Database Access Calls
 const userCalls = require('../backend/userCalls');;
 const explorationItemCalls = require('../backend/explorationItemCalls');
-// const mongoose = require("mongoose");
+
+// Mongoose Schemas
+const User = require('../models/User');
+
 
 router.get("/users/:userId/favourites", async (req, res) => {
+    // Fetch All User Favorites
     try {
         // Saving get request parameters
         const userId = req.params.userId;
@@ -27,21 +33,69 @@ router.get("/users/:userId/favourites", async (req, res) => {
     
 });
 
-router.post("/users/:userId/favourites", (req, res) => {
-    // Add an item to favourites
-    res.send("Add to Favourites");
+router.post("/users/:userId-:itemId/favourites", async (req, res) => {
+    // Add Favorite Item to User Item List
+    try {
+        // Add an item to favourites
+        const userId = req.params.userId;
+        const itemId = req.params.itemId;
+
+        // Saving requested item and user
+        const item = await explorationItemCalls.getExplorationItemFromDB(itemId);
+        const user = await User.findById(userId);
+
+        // Checking if user has any fav items at all
+        if (user.favourites.length > 0) {
+            // Checking if user has already favorited recieved item
+            if (user.favourites.includes(item._id)){
+                res.status(400).send("Item already favorited by User");
+            }
+        }
+        else {
+            await User.findByIdAndUpdate(userId, { $push : { favourites : item } }).exec();
+            res.send("Success");
+        }        
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).send("Internal Server Error");
+    }
+    
 });
 
-router.delete("/users/:userId/favourites", (req, res) => {
-    // Remove an item from favourites
-    res.send("Remove from Favourites");
+router.delete("/users/:userId-:itemId/favourites", async (req, res) => {
+    // Remove an item from User favourites
+    try {
+         // Add an item to favourites
+        const userId = req.params.userId;
+        const itemId = req.params.itemId;
+ 
+         // Saving requested item and user
+        const item = await explorationItemCalls.getExplorationItemFromDB(itemId);
+        const user = await userCalls.getUserFromDB(userId);
+ 
+        // Checking if list is empty
+        if (user.favourites.length === 0) {
+            res.status(400).send("Empty fav list, nothing to be removed");
+        } // Checking if item in user db, if so, deletes it
+        else if(user.favourites.includes(item._id)) {
+            await User.findByIdAndUpdate(userId, { $pull : { favourites : item._id } }).exec();
+            res.send("Successfully Removed Favorite Item");
+        }
+        else { // Sending error message because item not in User's list
+            res.status(400).send("Item recieved is not in User's favorite list");
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).send("Internal Server Error");
+    }
 });
 
 router.get("/users/:userId/plans", async (req, res) => {
+    // Getting all plans from user 
     try {
         // Saving get request parameters
         const userId = req.params.userId;
-        console.log(userId);
         // Grabbing user from database
         const user = await userCalls.getUserFromDB(userId);
         let planList = [];
@@ -60,9 +114,10 @@ router.get("/users/:userId/plans", async (req, res) => {
     }
 });
 
-router.post("/users/:userId/plans", (req, res) => {
-    // Add a new plan
-    res.send("Add Plan");
+router.post("/users/:userId-:itemId/plans", async (req, res) => {
+    // Update User Plan
+    // TODO
+    res.send("TODO")
 });
 
 router.put("/users/:userId/plans", (req, res) => {

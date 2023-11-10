@@ -18,7 +18,7 @@ async function addUserToDB(user) {
 
 /**
  * This function retriever User info from DB
- * @param {Number} userId 
+ * @param {mongoose.ObjectId} userId 
  * @returns User
  */
 async function getUserFromDB(userId) {
