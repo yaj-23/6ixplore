@@ -17,6 +17,7 @@
 .container {
     border: 5px solid blue;
     position: absolute;
+    margin-left: 0.5%;
 }
 
 .text1 {
@@ -36,8 +37,12 @@
 }
 
 .description p {
-    align: justify;
-    text-align: justify;
-    text-justify: inter-word;
-    border: 5px solid lightblue;
+    margin-top: -3%;
+    min-height: 3em;
+    max-width: 53em;
+    line-height: 1.2;
+    font-size: 23px;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+    /* border: 5px solid lightblue; */
 }

@@ -23,7 +23,7 @@ export default function HomePage() {
               {/* <p> Yabadabadoo Tamim Is My Goat Yabadabadoo Tamim Is My Goat Yabadabadoo Tamim Is My Goat Yabadabadoo.</p>
               <p> Frontend Blah Blah Frontend Blah Blah Frontend Blah Blah Frontend Blah Blah Frontend Blah Blah Frontend.</p>
               <p> Tomorrow will be a good day. Tomorrow will be a good day. Tomorrow will be a good day. Tomorrow will be a good day.</p> */}
-              <text> Yabadabadoo Tamim Is My Goat Yabadabadoo Tamim Is My Goat Yabadabadoo Tamim Is My Goat Yabadabadoo.<br/> Frontend Blah Blah Frontend Blah Blah Frontend Blah Blah Frontend Blah Blah Frontend Blah Blah Frontend.<br/>Tomorrow will be a good day. Tomorrow will be a good day. Tomorrow will be a good day. Tomorrow will be a good day.</text>
+              <text> Yabadabadoo Tamim Is My Goat Yabadabadoo Tamim Is My Goat Yabadabadoo Tamim Is My Goat Yabadabadoo. Frontend Blah Blah Frontend Blah Blah Frontend Blah Blah Frontend Blah Blah Frontend Blah Blah Frontend. Tomorrow will be a good day. Tomorrow will be a good day. Tomorrow will be a good day. Tomorrow will be a good day.</text>
           </div>
 
           <div className = "buttons">
