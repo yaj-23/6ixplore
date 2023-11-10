@@ -42,21 +42,3 @@
     font-family: 'Arial', sans-serif;
     position: relative;
 }
-
-/* @media only screen and (max-width: 1845px) { */
-
-@media only screen and (max-width: 1845px) {
-    .full {
-        display: grid;
-    }
-
-    .image {
-        Position: relative;
-        width: 50vw;
-    }
-
-    .container {
-        position: relative;
-        margin-top: -6%;
-    }
-}
