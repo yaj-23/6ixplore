@@ -6,7 +6,7 @@
     Position: absolute;
     right: 0;
     width: 60%;
-    margin-top: clamp(5.2rem, 1rem - 18vw, 0rem)
+    margin-top: clamp(4.5rem, 1rem - 18vw, 0rem)
 }
 
 .background {
@@ -16,7 +16,6 @@
 .container {
     position: absolute;
     margin-left: 1%;
-    /* border: 3px solid green; */
 }
 
 .text1 {
