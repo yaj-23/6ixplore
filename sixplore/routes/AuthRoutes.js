@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 
 router.post("/signup", (req, res) => {
-    // Create an account with email and password
+    // Create an account with email and password    
     res.send("Sign up");
 });
 
