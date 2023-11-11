@@ -13,7 +13,7 @@ export default function Signup() {
               <div className = "signup-fields">
               <form>
                 <input type = "textbox" placeholder="Name"/>
-                <input type = "textbox" placeholder="Email"/>
+                <input type = "email" placeholder="Email"/>
                 <input type = "password" placeholder="Password"/>
                 <input type = "password" placeholder="Confirm your password"/>
               </form>
