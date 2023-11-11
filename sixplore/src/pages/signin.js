@@ -13,7 +13,7 @@ export default function signin() {
       <h2>Welcome back </h2>
           <div className = "signin-fields">
           <img className = "usericon" src = {account} alt = "#"/>
-          <input type = "textbox" placeholder="Username"/>
+          <input type = "Email" placeholder="Username"/>
           <input type = "password" placeholder="Password"/>
       </div>
       
