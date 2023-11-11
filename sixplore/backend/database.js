@@ -32,7 +32,7 @@ async function init ()
         db.model("ExplorationItem", ExplorationItem.schema);
 
         // Populating DB with dummy Data 
-        // Note Exploration Data is hard capped to 20 Documents
+        // Note Exploration Data is hard capped to 23 entries (Check out data inside dummy_Data folder)
         addDummyExplorationData();
         addDummyUserData(25);        
 
@@ -65,12 +65,13 @@ function addDummyUserData(size){
     })
     .then(data => {
         data.forEach(async user => {
+            const favList = await addRandomFavoriteItems();            
             const newUser = {
                 name: `${user.first_name} ${user.last_name}`,
                 email : user.email,
                 password : user.password,
-                favourites : await addRandomFavoriteItems(),    
-                plans: await addRandomPlanItems()
+                favourites : favList,    
+                plans: await addRandomPlanItems(favList)
             }
             userCalls.addUserToDB(newUser);
         });
@@ -94,16 +95,20 @@ function addDummyExplorationData() {
  * 
  * @returns Return Random Plan Items to be Added to User (Dummy Data Purpose)
  */
-async function addRandomPlanItems() {
+async function addRandomPlanItems(favList) {
     // Getting Random Items from DB. Hard coded 5 as the highest number of plan items for now
-    const randomPlanItems = await getRandomExplorationItems(getRandomInt(5));
+    // const randomPlanItems = await getRandomExplorationItems(getRandomInt(5));
     let array = []
-    randomPlanItems.forEach(item => {
-        array.push({
-            name: item.name,
-            planItem: item._id
-        })
-    })
+    for (let item of favList) {
+        if (Math.random() >= 0.5) {
+            const tempItem = await explorationItemCalls.getExplorationItemFromDB(item._id);
+            
+            array.push({
+                name: tempItem.name,
+                planItem: item._id
+            })
+        }
+    }
     return array;   
 }
 
@@ -113,7 +118,7 @@ async function addRandomPlanItems() {
  */
 async function addRandomFavoriteItems() {
     // Getting Random Items from DB. Hard coded 7 as the highest number of fav items for now
-    const randomFavItems = await getRandomExplorationItems(getRandomInt(7));
+    const randomFavItems = await getRandomExplorationItems(getRandomInt(15));
     let array = [];
 
     randomFavItems.forEach(async (item) => {
