@@ -1,0 +1,95 @@
+
+
+
+.profile h2{
+    margin-left: 5.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-family: "inter";
+    font-weight: 500;
+
+}
+
+.profile h1{
+    font-size: 1.5rem;
+    font-family: "inter";
+    font-weight: 400;
+    margin-left: 2rem;
+}
+
+.profile-scaleBox{
+    box-sizing: border-box;
+    border-radius: 25px;
+    background-color:lightgrey;
+    padding: 1rem;
+    margin-left: 2.5rem;
+    width: 45rem;
+}
+.profile-scaleBox3{
+    box-sizing: border-box;
+    border-radius: 25px;
+    background-color:lightgrey;
+    padding: 1rem;
+    margin-left: 2.5rem;
+    width: 45rem;
+    height: 25rem;
+    overflow: auto;
+
+}
+.profile-scaleBox2{
+    box-sizing: border-box;
+    border-radius: 25px;
+    background-color:lightgrey;
+    padding: 1rem;
+    margin-left: 2.5rem;
+}
+.profile-bigDiv {
+    display: flex;
+    gap: 5rem;
+    font-size: 1.5rem;
+}
+
+.profile-boxDiv {
+    display: flex;
+    gap: 1rem;
+}
+
+.profile-contentBox{
+    border-radius: 25px;
+    /*background-color:#FFCECE;*/
+    background-image: linear-gradient(180deg, #FFCECE, #FFD3F5);
+
+    padding: 0.5rem;
+    height: 18rem;
+    width: 16rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.profile h3{
+    font-size: 0.6rem;
+    display: inline;
+    font-family: "inter";
+    margin-left: 1rem;  
+    font-family: "inter";
+    font-weight: 400;
+
+  
+
+}
+.profile h4{
+    text-align: center;
+    font-family: "inter";
+    font-size: 1rem;
+    font-weight: 400;
+
+}
+.profile-image{
+    background-color:lightgrey;
+    height: 10rem;
+    width: 14rem;
+    margin-left: 1rem;
+}
+
+
