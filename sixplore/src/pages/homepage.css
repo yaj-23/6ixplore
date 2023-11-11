@@ -3,41 +3,43 @@
 }
 
 .image {
-    border: 5px solid red;
     Position: absolute;
     right: 0;
     width: 60%;
+    margin-top: clamp(4.5rem, 1rem - 18vw, 0rem)
 }
 
 .background {
-    border: 5px solid green;
     width: 100%;
 }
 
 .container {
-    border: 5px solid blue;
     position: absolute;
+    margin-left: 1%;
 }
 
 .text1 {
-    border: 5px solid lawngreen;
     font-family: 'Lato', sans-serif;
     font-style: normal;
-    margin-top: 0%;
-    font-size: clamp(1rem, 1rem + 10vw, 8rem);
+    margin-top: 5%;
+    font-size: clamp(1rem, 0.7rem + 4vw, 8rem);
 }
 
 .text2 {
-    border: 5px solid purple;
     font-family: "Allura", cursive;
-    font-size: clamp(4rem, 1rem + 10vw, 11rem);
+    font-size: clamp(2rem, 0.7rem + 6vw, 11rem);
     font-weight: 1;
-    vertical-align: text-top;
 }
 
-.description p {
-    align: justify;
-    text-align: justify;
-    text-justify: inter-word;
-    border: 5px solid lightblue;
+.description {
+    max-width: clamp(1rem, 0.1rem + 40vw, 76rem);
+    margin-top: -7%;
+}
+
+.description text {
+    min-height: 3em;
+    line-height: 1.2;
+    font-size: clamp(0.82rem, 0.1rem + 0.85vw, 1.57rem);
+    font-family: 'Arial', sans-serif;
+    position: relative;
 }
