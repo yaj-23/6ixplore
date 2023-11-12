@@ -12,9 +12,6 @@ export default function HomePage() {
       <Navbar/>
     
       <div className="full">
-      
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap"></link>
-
         <div className = "image">
           <img className ="background" src={city} alt="City"/>
         </div>

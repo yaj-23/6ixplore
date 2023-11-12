@@ -3,3 +3,8 @@
     font-family: "Agreement";
     src: url(./fonts/Agreement.ttf);
   }
+
+@font-face {
+  font-family: "Latte";
+  src: url(./fonts/Latte.ttf);
+}
