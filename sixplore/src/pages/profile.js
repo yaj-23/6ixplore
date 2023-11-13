@@ -1,7 +1,7 @@
 import React from 'react'
 import './profile.css'
 import Navbar from '../components/navbar/nav'
-import { Button } from '../components/button/Button'
+import ContentBox from '../components/ContentBox';
 
 const Plans = ["Last Minute Day Trips", "Date Night ideas", "@ AM Food Runs", "FUN",];
 
@@ -10,6 +10,10 @@ var email = "gary.deng@torontomu.ca"
 var phoneNumber = "(647) 999-9999"
 
 const events = [
+  {
+    location: "123 One Piece Avenue, Konoha A1B2C3",
+    genres: ["bar/club", "fast food", "fine dining", "escape room", "physical activity"]
+  },
   {
     location: "123 One Piece Avenue, Konoha A1B2C3",
     genres: ["bar/club", "fast food", "fine dining", "escape room", "physical activity"]
@@ -44,145 +48,19 @@ export default function Signup() {
           <div className="profile-rightDiv">
             <h2>Liked Destinations</h2>
             <div className="profile-scaleBox2">
-            <div className="profile-boxDiv">
-
-              <div className="profile-contentBox"//top left
-              >
-                {events.map(({ location, genres, rating }) => (
-                  <>
-                    <h4>{location}</h4>
-                    <div className="profile-image"></div>
-                    <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "center"
-                      }}>
-                      {genres.map((d) => (
-                        <>
-                          <h3>{d}</h3>
-                        </>
-                      ))}
-                    </div>
-
-                  </>
-                ))}
-              </div>
-              <div className="profile-contentBox" // top middle
-              >
-                {events.map(({ location, genres, rating }) => (
-                  <>
-                    <h4>{location}</h4>
-                    <div className="profile-image"></div>
-                    <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "center"
-                      }}>
-                      {genres.map((d) => (
-                        <>
-                          <h3>{d}</h3>
-                        </>
-                      ))}
-                    </div>
-
-                  </>
-                ))}
-              </div>
-              <div className="profile-contentBox" //top right
-              >
-                {events.map(({ location, genres, rating }) => (
-                  <>
-                    <h4>{location}</h4>
-                    <div className="profile-image"></div>
-                    <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "center"
-                      }}>
-                      {genres.map((d) => (
-                        <>
-                          <h3>{d}</h3>
-                        </>
-                      ))}
-                    </div>
-
-                  </>
-                ))}
-              </div>
-              </div>
               <div className="profile-boxDiv">
-              <div className="profile-contentBox" //bottom left
-              > 
-                {events.map(({ location, genres, rating }) => (
-                  <>
-                    <h4>{location}</h4>
-                    <div className="profile-image">
+                {events.map(({location, genres}) => {
+                  return (
+                    <div>
+                      <ContentBox location={location} genres={genres} />
                     </div>
-                    <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "center"
-                      }}>
-                      {genres.map((d) => (
-                        <>
-                          <h3>{d}</h3>
-                        </>
-                      ))}
-                    </div>
-
-                  </>
-                ))}
-              </div>
-              <div className="profile-contentBox" //bottom middle
-              > 
-                {events.map(({ location, genres, rating }) => (
-                  <>
-                    <h4>{location}</h4>
-                    <div className="profile-image">
-                    </div>
-                    <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "center"
-                      }}>
-                      {genres.map((d) => (
-                        <>
-                          <h3>{d}</h3>
-                        </>
-                      ))}
-                    </div>
-
-                  </>
-                ))}
-              </div>
-              <div className="profile-contentBox" //bottom right
-              >
-                {events.map(({ location, genres, rating }) => (
-                  <>
-                    <h4>{location}</h4>
-                    <div className="profile-image">
-                    </div>
-                    <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "center"
-                      }}>
-                      {genres.map((d) => (
-                        <>
-                          <h3>{d}</h3>
-                        </>
-                      ))}
-                    </div>
-
-                  </>
-                ))}
-              </div>
+                  )
+                })}
               </div>
             </div>
           </div>
-
         </div>
       </div>
-    </div >
+    </div>
   )
 }
