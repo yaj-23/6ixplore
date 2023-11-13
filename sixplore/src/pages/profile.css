@@ -53,6 +53,7 @@
 .profile-boxDiv {
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .profile-contentBox{
