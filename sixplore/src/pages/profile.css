@@ -42,7 +42,7 @@
     border-radius: 25px;
     background-color:lightgrey;
     padding: 1rem;
-    margin-left: 2.5rem;
+    margin-right: 10rem;
 }
 .profile-bigDiv {
     display: flex;
@@ -64,8 +64,7 @@
     padding: 0.5rem;
     height: 18rem;
     width: 16rem;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+  
 }
 
 .profile h3{

@@ -18,6 +18,35 @@ const events = [
     location: "123 One Piece Avenue, Konoha A1B2C3",
     genres: ["bar/club", "fast food", "fine dining", "escape room", "physical activity"]
   },
+  {
+    location: "123 One Piece Avenue, Konoha A1B2C3",
+    genres: ["bar/club", "fast food", "fine dining", "escape room", "physical activity"]
+  },
+  {
+    location: "123 One Piece Avenue, Konoha A1B2C3",
+    genres: ["bar/club", "fast food", "fine dining", "escape room", "physical activity"]
+  },
+  {
+    location: "123 One Piece Avenue, Konoha A1B2C3",
+    genres: ["bar/club", "fast food", "fine dining", "escape room", "physical activity"]
+  },
+  {
+    location: "123 One Piece Avenue, Konoha A1B2C3",
+    genres: ["bar/club", "fast food", "fine dining", "escape room", "physical activity"]
+  },
+  {
+    location: "123 One Piece Avenue, Konoha A1B2C3",
+    genres: ["bar/club", "fast food", "fine dining", "escape room", "physical activity"]
+  },
+
+
+  
+
+
+
+
+ 
+  
 ]
 
 export default function Signup() {
