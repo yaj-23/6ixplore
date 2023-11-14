@@ -48,7 +48,6 @@
     row-gap: 2rem;
     min-height: 22rem;
     max-height: 43rem;
-    border: 2px solid red;
     justify-content: flex-start; /*not doin anythin */
     
 }
