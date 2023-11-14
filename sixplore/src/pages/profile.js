@@ -11,66 +11,92 @@ var phoneNumber = "(647) 999-9999"
 
 const events = [
   {
+    name: "EXAMPLE EVENT",
     location: "123 One Piece Avenue, Konoha A1B2C3",
     genres: ["bar/club", "fast food", "fine dining", "escape room", "physical activity"]
   },
   {
+    name: "EXAMPLE EVENT",
+    location: "123 One Piece Avenue, Konoha A1B2C3",
+    genres: ["bar/club", "fast food", "fine dining", "escape room", "physical activity"]
+  },
+
+  {
+    name: "EXAMPLE EVENT",
+    location: "123 One Piece Avenue, Konoha A1B2C3",
+    genres: ["bar/club", "fast food", "fine dining", "escape room", "physical activity"]
+  },
+
+  {
+    name: "EXAMPLE EVENT",
     location: "123 One Piece Avenue, Konoha A1B2C3",
     genres: ["bar/club", "fast food", "fine dining", "escape room", "physical activity"]
   },
   {
+    name: "EXAMPLE EVENT",
     location: "123 One Piece Avenue, Konoha A1B2C3",
     genres: ["bar/club", "fast food", "fine dining", "escape room", "physical activity"]
-  },  
+  },
+
   {
+    name: "EXAMPLE EVENT",
+    location: "123 One Piece Avenue, Konoha A1B2C3",
+    genres: ["bar/club", "fast food", "fine dining", "escape room", "physical activity"]
+  },{
+    name: "EXAMPLE EVENT",
     location: "123 One Piece Avenue, Konoha A1B2C3",
     genres: ["bar/club", "fast food", "fine dining", "escape room", "physical activity"]
   },
+
   {
-    location: "123 One Piece Avenue, Konoha A1B2C3",
-    genres: ["bar/club", "fast food", "fine dining", "escape room", "physical activity"]
-  },
-   {
-    location: "123 One Piece Avenue, Konoha A1B2C3",
-    genres: ["bar/club", "fast food", "fine dining", "escape room", "physical activity"]
-  },
-    {
-    location: "123 One Piece Avenue, Konoha A1B2C3",
-    genres: ["bar/club", "fast food", "fine dining", "escape room", "physical activity"]
-  },
-  {
+    name: "EXAMPLE EVENT",
     location: "123 One Piece Avenue, Konoha A1B2C3",
     genres: ["bar/club", "fast food", "fine dining", "escape room", "physical activity"]
   },
   {
+    name: "EXAMPLE EVENT",
     location: "123 One Piece Avenue, Konoha A1B2C3",
     genres: ["bar/club", "fast food", "fine dining", "escape room", "physical activity"]
   },
-    {
+
+  {
+    name: "EXAMPLE EVENT",
     location: "123 One Piece Avenue, Konoha A1B2C3",
     genres: ["bar/club", "fast food", "fine dining", "escape room", "physical activity"]
   },
   {
+    name: "EXAMPLE EVENT",
+    location: "123 One Piece Avenue, Konoha A1B2C3",
+    genres: ["bar/club", "fast food", "fine dining", "escape room", "physical activity"]
+  },
+
+  {
+    name: "EXAMPLE EVENT",
     location: "123 One Piece Avenue, Konoha A1B2C3",
     genres: ["bar/club", "fast food", "fine dining", "escape room", "physical activity"]
   },
   {
+    name: "EXAMPLE EVENT",
     location: "123 One Piece Avenue, Konoha A1B2C3",
     genres: ["bar/club", "fast food", "fine dining", "escape room", "physical activity"]
   },
-    {
+
+  {
+    name: "EXAMPLE EVENT",
     location: "123 One Piece Avenue, Konoha A1B2C3",
     genres: ["bar/club", "fast food", "fine dining", "escape room", "physical activity"]
   },
   {
+    name: "EXAMPLE EVENT",
     location: "123 One Piece Avenue, Konoha A1B2C3",
     genres: ["bar/club", "fast food", "fine dining", "escape room", "physical activity"]
   },
+
   {
+    name: "EXAMPLE EVENT",
     location: "123 One Piece Avenue, Konoha A1B2C3",
     genres: ["bar/club", "fast food", "fine dining", "escape room", "physical activity"]
   },
-  
 
 
 ]
@@ -103,14 +129,14 @@ export default function Signup() {
           <div className="profile-rightDiv">
             <h2>Liked Destinations</h2>
             <div className="profile-scaleBox2">
-              {events.map(({location, genres}) => {
+              {events.map(({ name, genres }) => {
                 return (
                   <div>
-                    <ContentBox location={location} genres={genres} />
+                    <ContentBox name={name} genres={genres} />
                   </div>
                 )
               })}
-            </div>  
+            </div>
           </div>
         </div>
       </div>
