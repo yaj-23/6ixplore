@@ -25,8 +25,13 @@ export default function Dashboard() {
           </div>
           <div className="dashboard-image">
           </div>
-          <div className="dashboard-button">
-            <img src={like} alt=""/>
+          <div className="dashboard-likes">
+            <div className="dashboard-button">
+              <img src={like} alt=""/>
+            </div>
+            <div className="dashboard-button">
+              <img src={unlike} style={{ transform: 'rotate(45deg) scale(0.8)' }} alt=""/>
+            </div>
           </div>
         </div>
         <div className="dashboard-description">
