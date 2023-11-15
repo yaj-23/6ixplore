@@ -2,9 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 // Database Access Calls
-const userCalls = require('../backend/userCalls');
 const explorationItemCalls = require('../backend/explorationItemCalls');
-
 
 router.get("/explore", async (req, res) => {
     // Gets all available exploration items

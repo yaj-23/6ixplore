@@ -195,6 +195,20 @@ router.delete("/users/:userId-:itemId/deletePlan", async (req, res) => {
     }
 });
 
+/**
+ * Temp Get Request for fetching a random user
+ */
+router.get("/randomUser", async (req, res) => {
+    try {
+        const randuser = await User.aggregate([
+            { $sample: { size: 1 } }
+        ]);
+        res.send(randuser[0]);
+    } catch (error) {        
+        res.send(error.toString()).status(500);
+    }
+})
+
 module.exports = router;
 
 /**
