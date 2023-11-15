@@ -5,22 +5,29 @@ body{
 .signup h2{
         margin-left: 0.5rem;
         margin-bottom: 0.7rem;
-        font-family: 'Allura', cursive;
+        font-family: 'Agreement';
         font-size: 5rem;
     }
     
+.signup-fields input:focus{
+        outline: none;
+}
 .signup-fields input{
     width: 25rem;
         display: flex;
         flex-direction: column;
         font-size: 20px;
-        border-width: 1px;
-        border-radius: 20px;
+        border: transparent;
+        border-radius: 50px;
         padding: 25px;
         margin-top: 5%;
         margin-bottom: 5%;
+        background-color: lightgrey;
     }
 
+.signup-fields input ::marker{
+        border: transparent;
+    }
 
 .signup button{
     width: 10rem;
@@ -38,7 +45,6 @@ body{
     position: relative;
     margin-left: 48%;
     margin-top: 1.5%;
-   
 }
 
 .topnav a{
