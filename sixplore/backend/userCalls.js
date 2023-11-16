@@ -3,17 +3,29 @@ const User = require("../models/User");
 
 /**
  * This function adds User into DB
- * @param {JSON} user 
+ * @param {JSON} userInfo JSON Info of User
  * @returns Boolean
  */
-async function addUserToDB(user) {
+async function addUserToDB(userInfo) {
     try 
     {   
-        await User.create(user);  
-        return true
+        // Checking is a User Already exists
+        const userExists = await User.findOne({ email: userInfo.email }).exec();
+
+        if (userExists) {
+            throw new Error("User already exists", { cause: { statusCode: 404, message: "User already exists" } })
+        }
+        else {
+            const newUser = await User.create(userInfo);
+            await newUser.save();  
+            return newUser._id;
+        }
+
     }catch(error){
-        console.error(error);
-        throw Error("Some Error Occured: ", error);
+        if (error instanceof(Error))
+            throw error
+        else
+            throw Error("Some Error Occured: ", error.toString());
     }
 }
 
@@ -34,9 +46,7 @@ async function getUserFromDB(userId) {
     }    
 }
 
-
 module.exports = {
     addUserToDB,
     getUserFromDB
 }
-

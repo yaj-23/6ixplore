@@ -1,7 +1,7 @@
 import React from 'react'
 import './signin.css'
 import Navbar from '../components/navbar/nav'
-import account from '../assets/account.svg'
+import account from '../assets/accountsignin.svg'
 import { Button } from '../components/button/Button'
 
 export default function signin() {
@@ -13,7 +13,7 @@ export default function signin() {
       <h2>Welcome back </h2>
           <div className = "signin-fields">
           <img className = "usericon" src = {account} alt = "#"/>
-          <input type = "textbox" placeholder="Username"/>
+          <input type = "Email" placeholder="Username"/>
           <input type = "password" placeholder="Password"/>
       </div>
       

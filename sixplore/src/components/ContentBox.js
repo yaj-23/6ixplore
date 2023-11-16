@@ -11,7 +11,6 @@ export default function ContentBox({name, genres}) {
             <img src={unlike} alt=""/>
             </div>
             <h4>{name}</h4>
-            
             <div className="profile-image"></div>
             <div style={{ display: "flex", justifyContent: "center" }}>
                 {genres.map((d) => (

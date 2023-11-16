@@ -46,9 +46,6 @@ async function getAllItems() {
     }
 }
 
-
-
-
 module.exports = {
     addExplorationItemToDB,
     getExplorationItemFromDB,

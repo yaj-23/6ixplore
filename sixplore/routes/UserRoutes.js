@@ -27,7 +27,7 @@ router.get("/users/:userId/getFavourites", async (req, res) => {
         // Sending back fav item list
         res.send(favList);
     } catch (error) {
-        errorCheck(res, error);
+        errorFunc(res, error);
     }
     
 });
@@ -59,7 +59,7 @@ router.post("/users/:userId-:itemId/addFavourite", async (req, res) => {
         }        
 
     } catch (error) {
-        errorCheck(res, error);
+        errorFunc(res, error);
     }
     
 });
@@ -85,7 +85,7 @@ router.delete("/users/:userId-:itemId/removeFavourite", async (req, res) => {
         }else
             throw new Error("Wrong Item Id sent", { cause: { statusCode : 404 } });
     } catch (error) {
-        errorCheck(res, error);
+        errorFunc(res, error);
     }
 });
 
@@ -108,7 +108,7 @@ router.get("/users/:userId/getPlans", async (req, res) => {
         // Sending back plan item list
         res.send(planList);
     } catch (error) {
-        errorCheck(res, error);
+        errorFunc(res, error);
     }
 });
 
@@ -147,7 +147,7 @@ router.post("/users/:userId-:itemId/addPlan", async (req, res) => {
         res.send("Item added successfully");
 
     } catch (error) {
-        errorCheck(res, error);
+        errorFunc(res, error);
     }
 });
 
@@ -191,15 +191,34 @@ router.delete("/users/:userId-:itemId/deletePlan", async (req, res) => {
             throw new Error("Wrong Id Sent", { cause: { statusCode : 404 }});
         
     } catch (error) {
-        errorCheck(res, error);
+        errorFunc(res, error);
     }
 });
 
+/**
+ * Temp Get Request for fetching a random user
+ */
+router.get("/randomUser", async (req, res) => {
+    try {
+        const randuser = await User.aggregate([
+            { $sample: { size: 1 } }
+        ]);
+        res.send(randuser[0]);
+    } catch (error) {        
+        res.send(error.toString()).status(500);
+    }
+})
+
 module.exports = router;
 
-function errorCheck(res, error){
+/**
+ * 
+ * @param {*} res 
+ * @param {*} error 
+ */
+function errorFunc(res, error){
     if (error.name === "TypeError")
-            res.status(404).send("Wrong ID sent");
+        res.status(404).send("Wrong ID sent");
     else if (error.cause) {
         res.status(error.cause.statusCode).send(error.toString());            
     }
