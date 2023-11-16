@@ -5,6 +5,11 @@
     align-items: center;
 }
 
+.dashboard-con.transition{
+    opacity: 0;
+    transition: opacity 400ms ease-in-out;
+}
+
 .dashboard-image{
     background-color:lightgrey;
     height: 400px;
@@ -25,7 +30,7 @@
     font-weight: 400;
 }
 .dashboard-description button{
-    width: 10rem;
+    width: 20rem;
     padding: 10px;
     border-radius: 20px;
     border-width: 1px;
@@ -54,6 +59,14 @@
     -moz-transform:scale(1.25);
     -o-transform:scale(1.25);
     transform:scale(1.25);
+}
+
+.dashboard-button.like.transitionLike{
+    filter: invert(15%) sepia(100%) saturate(2476%) hue-rotate(0deg) brightness(118%) contrast(119%);
+}
+
+.dashboard-button.unlike.transitionUnlike{
+    filter: grayscale(50%) brightness(150%);
 }
 
 .star{
