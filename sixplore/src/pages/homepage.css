@@ -19,14 +19,15 @@
 }
 
 .text1 {
-    font-family: 'Lato', sans-serif;
-    font-style: normal;
+    font-family: "Latte";
     margin-top: 5%;
     font-size: clamp(1rem, 0.7rem + 4vw, 8rem);
-}
+    font-style: none;
+    font-weight: lighter;
+} 
 
 .text2 {
-    font-family: "Allura", cursive;
+    font-family: "Allura";
     font-size: clamp(2rem, 0.7rem + 6vw, 11rem);
     font-weight: 1;
 }
