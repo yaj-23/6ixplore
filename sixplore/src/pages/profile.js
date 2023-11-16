@@ -109,6 +109,10 @@ export default function Profile() {
                 <Modal isOpen={modal} onClose={exitModal}>
                   <div className="profile-modal-title">{plan}</div>
                   <div>Put events here</div>
+
+                  <Button buttonColor='primary' buttonSize='btn-medium' buttonStyle='btn-primary' >
+                    Delete Plan
+                  </Button>
                 </Modal>
                 </div>
               ))}
