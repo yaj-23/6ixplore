@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c1b5b2e5.css",
+    "main.js": "/static/js/main.71d55821.js",
+    "static/media/citypic.svg": "/static/media/citypic.707d6ff4fd55104f999dac33f8e2d558.svg",
+    "static/media/Latte.ttf": "/static/media/Latte.5a60dde25d817751d590.ttf",
+    "static/media/Agreement.ttf": "/static/media/Agreement.b494a0e16ac88574f8d5.ttf",
+    "static/media/logo.svg": "/static/media/logo.0b2ef7825bb8176aabde072124ffad70.svg",
+    "index.html": "/index.html",
+    "static/media/heart.svg": "/static/media/heart.952a114d5760b91012b815ed6aaee4aa.svg",
+    "static/media/account.svg": "/static/media/account.5dc1a1616ce3222c5a2d416b9c8f968b.svg",
+    "static/media/accountsignin.svg": "/static/media/accountsignin.590cc4fff666a82c650dda21c798032b.svg",
+    "static/media/x.svg": "/static/media/x.cb6e3c88d0ab3943f2eb6d56a8036cd3.svg",
+    "static/media/xSmall.svg": "/static/media/xSmall.f3368cea0fe4dfe4c14317304b9ae2b0.svg",
+    "main.c1b5b2e5.css.map": "/static/css/main.c1b5b2e5.css.map",
+    "main.71d55821.js.map": "/static/js/main.71d55821.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c1b5b2e5.css",
+    "static/js/main.71d55821.js"
+  ]
+}

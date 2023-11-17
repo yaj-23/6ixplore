@@ -3,12 +3,7 @@ const router = express.Router();
 
 const userCalls = require('../backend/userCalls');
 
-// User Auth API Calls
-/*
-app.get("/login/:userName-:password", (req, res) => {
-  
-});
-*/
+
 router.post("/signup", async (req, res) => {
 
     try {
@@ -22,7 +17,7 @@ router.post("/signup", async (req, res) => {
     }
     
 });
-router.post("/login", async (req, res) => {
+router.post("/signin", async (req, res) => {
     try{
     const userInfo = req.body;
     const userId = await userCalls.searchUserInDB(userInfo);

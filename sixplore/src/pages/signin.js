@@ -4,7 +4,7 @@ import Navbar from '../components/navbar/nav'
 import account from '../assets/accountsignin.svg'
 import { Button } from '../components/button/Button'
 
-export default function signin() {
+export default function Signin() {
   const [email, setemail] = useState('');
   const [password, setpassword] = useState('');
   let currUserId = "";
@@ -15,7 +15,7 @@ export default function signin() {
    */
   const fetchId = async (userInfo) => {
     try {
-      const resp = await fetch("http://localhost:3000/login", {
+      const resp = await fetch("http://localhost:3000/signin", {
         method: "post",
         body: JSON.stringify(userInfo),
         headers: {
@@ -55,7 +55,7 @@ export default function signin() {
       alert(`User has successfully logged in: ${currUserId}`);
     }
     else {
-      alert("Login Successful");
+      alert("Incorrect User Information");
     }
        
   }
