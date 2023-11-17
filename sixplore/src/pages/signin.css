@@ -1,0 +1,82 @@
+body{
+    position: relative;
+}
+
+.signin h2{
+        margin-left: 0.5rem;
+        margin-bottom: 0.7rem;
+        font-family: "Agreement";
+        font-size: 5.5rem;
+    }
+
+.signin-fields input:focus{
+        outline: none;
+}
+
+.signin-fields input{
+        width: 25rem;
+        display: flex;
+        flex-direction: column;
+        font-size: 20px;
+        border-width: 1px;
+        border-radius: 50px;
+        padding: 25px;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        background-color: lightgrey;
+        border: transparent;
+    }
+
+
+.signin img{
+    width: 5rem;
+    padding: 2px;
+    border-radius: 20px;
+    margin-top: 0.1px;
+    margin-left: 10.8rem;
+
+}
+
+.topnav{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    position: relative;
+    margin-left: 48%;
+    margin-top: 1.5%;
+   
+}
+
+.topnav a{
+    padding-right: 3%;
+    font-size: 30px;
+    text-decoration: none;
+    color:black;
+}
+
+.signin {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   margin-left: 0.7%;
+   margin-top: 0.6%;
+   
+}
+
+button{
+    padding:5px;
+    width: 10rem;
+    height: 3rem;
+    border-radius: 16px;
+    background-color: white;
+}
+
+.signin p{
+    margin-top: 1.2%;
+}
+
+.signin a{
+    text-decoration: solid;
+    
+}

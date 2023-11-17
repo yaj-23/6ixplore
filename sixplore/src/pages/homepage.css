@@ -1,0 +1,46 @@
+.full {
+    margin-top: 10%;
+}
+
+.image {
+    Position: absolute;
+    right: 0;
+    width: 60%;
+    margin-top: clamp(4.5rem, 1rem - 18vw, 0rem)
+}
+
+.background {
+    width: 100%;
+}
+
+.container {
+    position: absolute;
+    margin-left: 1%;
+}
+
+.text1 {
+    font-family: "Latte";
+    margin-top: 5%;
+    font-size: clamp(1rem, 0.7rem + 4vw, 8rem);
+    font-style: none;
+    font-weight: lighter;
+} 
+
+.text2 {
+    font-family: "Allura";
+    font-size: clamp(2rem, 0.7rem + 6vw, 11rem);
+    font-weight: 1;
+}
+
+.description {
+    max-width: clamp(1rem, 0.1rem + 40vw, 76rem);
+    margin-top: -7%;
+}
+
+.description text {
+    min-height: 3em;
+    line-height: 1.2;
+    font-size: clamp(0.82rem, 0.1rem + 0.85vw, 1.57rem);
+    font-family: 'Arial', sans-serif;
+    position: relative;
+}

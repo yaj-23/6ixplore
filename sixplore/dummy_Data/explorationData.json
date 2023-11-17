@@ -1,0 +1,209 @@
+[
+  {
+    "name": "High Park",
+    "description": "Explore Toronto's largest public park",
+    "address": "1873 Bloor St W, Toronto, ON, Canada",
+    "stars": 4.7,
+    "type": "ACTIVITY",
+    "tags": ["park", "nature", "outdoors"],
+    "pictureURL": "http://example.com/highpark.jpg"
+  },
+  {
+    "name": "Queen Street West",
+    "description": "A trendy and eclectic shopping district",
+    "address": "789 Queen St W, Toronto, ON, Canada",
+    "stars": 4.6,
+    "type": "PLACE",
+    "tags": ["shopping", "trendy", "artsy"],
+    "pictureURL": "http://example.com/queenstreet.jpg"
+  },
+  {
+    "name": "CN Tower Restaurant",
+    "description": "Dine with a panoramic view of Toronto's skyline",
+    "address": "301 Front St W, Toronto, ON, Canada",
+    "stars": 4.8,
+    "type": "FOOD",
+    "tags": ["restaurant", "view", "fine dining"],
+    "pictureURL": "http://example.com/cntowerrestaurant.jpg"
+  },
+  {
+    "name": "Royal Ontario Museum",
+    "description": "Immerse yourself in art, culture, and natural history",
+    "address": "100 Queen's Park, Toronto, ON, Canada",
+    "stars": 4.5,
+    "type": "PLACE",
+    "tags": ["museum", "art", "culture"],
+    "pictureURL": "http://example.com/romuseum.jpg"
+  },
+  {
+    "name": "St. Lawrence Market",
+    "description": "Experience Toronto's premier food market",
+    "address": "93 Front St E, Toronto, ON, Canada",
+    "stars": 4.7,
+    "type": "PLACE",
+    "tags": ["market", "food", "culinary"],
+    "pictureURL": "http://example.com/stlawrencemarket.jpg"
+  },
+  {
+    "name": "Distillery District",
+    "description": "Historic site with shops, galleries, and restaurants",
+    "address": "55 Mill St, Toronto, ON, Canada",
+    "stars": 4.6,
+    "type": "PLACE",
+    "tags": ["historic", "shopping", "dining"],
+    "pictureURL": "http://example.com/distillerydistrict.jpg"
+  },
+  {
+    "name": "Toronto Islands",
+    "description": "A group of small islands offering outdoor activities",
+    "address": "9 Queens Quay W, Toronto, ON, Canada",
+    "stars": 4.5,
+    "type": "ACTIVITY",
+    "tags": ["islands", "outdoors", "nature"],
+    "pictureURL": "http://example.com/torontoislands.jpg"
+  },
+  {
+    "name": "Art Gallery of Ontario",
+    "description": "Explore a collection of over 90,000 works of art",
+    "address": "317 Dundas St W, Toronto, ON, Canada",
+    "stars": 4.8,
+    "type": "PLACE",
+    "tags": ["art", "gallery", "culture"],
+    "pictureURL": "http://example.com/ago.jpg"
+  },
+  {
+    "name": "Kensington Market",
+    "description": "Vibrant neighborhood with diverse shops and eateries",
+    "address": "65 Kensington Ave, Toronto, ON, Canada",
+    "stars": 4.6,
+    "type": "PLACE",
+    "tags": ["market", "diverse", "shopping"],
+    "pictureURL": "http://example.com/kensingtonmarket.jpg"
+  },
+  {
+    "name": "Ripley's Aquarium of Canada",
+    "description": "Get up close with marine life in downtown Toronto",
+    "address": "288 Bremner Blvd, Toronto, ON, Canada",
+    "stars": 4.7,
+    "type": "PLACE",
+    "tags": ["aquarium", "marine life", "family"],
+    "pictureURL": "http://example.com/ripleysaquarium.jpg"
+  },
+  {
+    "name": "Royal York Hotel",
+    "description": "Experience luxury at Toronto's iconic hotel",
+    "address": "100 Front St W, Toronto, ON, Canada",
+    "stars": 4.9,
+    "type": "PLACE",
+    "tags": ["hotel", "luxury", "historic"],
+    "pictureURL": "http://example.com/royalyorkhotel.jpg"
+  },
+  {
+    "name": "Harbourfront Centre",
+    "description": "Cultural hub with arts, performances, and events",
+    "address": "235 Queens Quay W, Toronto, ON, Canada",
+    "stars": 4.6,
+    "type": "PLACE",
+    "tags": ["cultural", "arts", "performances"],
+    "pictureURL": "http://example.com/harbourfrontcentre.jpg"
+  },
+  {
+    "name": "Yonge-Dundas Square",
+    "description": "Toronto's Times Square with events and entertainment",
+    "address": "1 Dundas St E, Toronto, ON, Canada",
+    "stars": 4.7,
+    "type": "PLACE",
+    "tags": ["square", "events", "entertainment"],
+    "pictureURL": "http://example.com/yongedundassquare.jpg"
+  },
+  {
+    "name": "Hockey Hall of Fame",
+    "description": "Celebrate the history of hockey in Canada",
+    "address": "30 Yonge St, Toronto, ON, Canada",
+    "stars": 4.8,
+    "type": "PLACE",
+    "tags": ["hockey", "sports", "history"],
+    "pictureURL": "http://example.com/hockeyhalloffame.jpg"
+  },
+  {
+    "name": "Casa Loma",
+    "description": "Explore a historic castle in the heart of Toronto",
+    "address": "1 Austin Terrace, Toronto, ON, Canada",
+    "stars": 4.7,
+    "type": "PLACE",
+    "tags": ["castle", "history", "tourist attraction"],
+    "pictureURL": "http://example.com/casaloma.jpg"
+  },
+  {
+    "name": "Toronto Zoo",
+    "description": "Visit one of the largest zoos in the world",
+    "address": "2000 Meadowvale Rd, Toronto, ON, Canada",
+    "stars": 4.6,
+    "type": "PLACE",
+    "tags": ["zoo", "animals", "family"],
+    "pictureURL": "http://example.com/torontozoo.jpg"
+  },
+  {
+    "name": "Ontario Science Centre",
+    "description": "Engage in interactive science exhibits and displays",
+    "address": "770 Don Mills Rd, Toronto, ON, Canada",
+    "stars": 4.5,
+    "type": "PLACE",
+    "tags": ["science", "interactive", "education"],
+    "pictureURL": "http://example.com/ontariosciencecentre.jpg"
+  },
+  {
+    "name": "Bata Shoe Museum",
+    "description": "Explore the history of footwear from around the world",
+    "address": "327 Bloor St W, Toronto, ON, Canada",
+    "stars": 4.7,
+    "type": "PLACE",
+    "tags": ["museum", "shoes", "culture"],
+    "pictureURL": "http://example.com/batashoemuseum.jpg"
+  },
+  {
+    "name": "Riverdale Farm",
+    "description": "Experience a working farm in the heart of the city",
+    "address": "201 Winchester St, Toronto, ON, Canada",
+    "stars": 4.6,
+    "type": "ACTIVITY",
+    "tags": ["farm", "animals", "nature"],
+    "pictureURL": "http://example.com/riverdalefarm.jpg"
+  },
+  {
+    "name": "Aga Khan Museum",
+    "description": "Discover Islamic art, culture, and heritage",
+    "address": "77 Wynford Dr, Toronto, ON, Canada",
+    "stars": 4.8,
+    "type": "PLACE",
+    "tags": ["museum", "Islamic art", "culture"],
+    "pictureURL": "http://example.com/agakhanmuseum.jpg"
+  },
+  {
+    "name": "Toronto Reference Library",
+    "description": "A hub of knowledge and resources for learning",
+    "address": "789 Yonge St, Toronto, ON, Canada",
+    "stars": 4.7,
+    "type": "PLACE",
+    "tags": ["library", "learning", "resources"],
+    "pictureURL": "http://example.com/torontoreferencelibrary.jpg"
+  },
+  {
+    "name": "Rogers Centre",
+    "description": "Home to the Toronto Blue Jays and major events",
+    "address": "1 Blue Jays Way, Toronto, ON, Canada",
+    "stars": 4.7,
+    "type": "PLACE",
+    "tags": ["sports", "stadium", "events"],
+    "pictureURL": "http://example.com/rogerscentre.jpg"
+  },
+  {
+    "name": "Chinatown Toronto",
+    "description": "Explore the vibrant sights and flavors of Chinatown",
+    "address": "420 Spadina Ave, Toronto, ON, Canada",
+    "stars": 4.6,
+    "type": "PLACE",
+    "tags": ["Chinatown", "culture", "food"],
+    "pictureURL": "http://example.com/chinatown.jpg"
+  }
+]
