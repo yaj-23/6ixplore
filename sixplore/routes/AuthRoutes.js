@@ -3,6 +3,12 @@ const router = express.Router();
 
 const userCalls = require('../backend/userCalls');
 
+// User Auth API Calls
+/*
+app.get("/login/:userName-:password", (req, res) => {
+  
+});
+*/
 router.post("/signup", async (req, res) => {
 
     try {
@@ -16,10 +22,14 @@ router.post("/signup", async (req, res) => {
     }
     
 });
-
-router.post("/login", (req, res) => {
-    // Verify account credentials and return userId
-    res.send("Login");
+router.post("/login", async (req, res) => {
+    try{
+    const userInfo = req.body;
+    const userId = await userCalls.searchUserInDB(userInfo);
+    res.send(userId);
+    }catch(error){
+        errorFunc(res, error);
+    }
 });
 
 router.delete("/delete-account", (req, res) => {

@@ -28,6 +28,26 @@ async function addUserToDB(userInfo) {
             throw Error("Some Error Occured: ", error.toString());
     }
 }
+async function searchUserInDB(userInfo){
+    try 
+    {   
+        // Checking is a User Already exists
+        const userExists = await User.findOne({ email: userInfo.email, password: userInfo.password }).exec();
+
+        if (userExists) {
+            return userExists._id;
+        }
+        else {
+            throw new Error("User does not exist", { cause: { statusCode: 404, message: "Incorrect login info" } })
+        }
+
+    }catch(error){
+        if (error instanceof(Error))
+            throw error
+        else
+            throw Error("Some Error Occured: ", error.toString());
+    }
+}
 
 /**
  * This function retriever User info from DB
@@ -48,5 +68,6 @@ async function getUserFromDB(userId) {
 
 module.exports = {
     addUserToDB,
-    getUserFromDB
+    getUserFromDB,
+    searchUserInDB
 }
