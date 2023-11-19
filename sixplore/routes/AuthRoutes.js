@@ -19,8 +19,6 @@ router.post("/signup", async (req, res) => {
 router.post("/signin", async (req, res) => {
     try{
     const userInfo = req.body;
-    console.log(userInfo);
-
     const userId = await userCalls.searchUserInDB(userInfo);
     res.send(userId);
     }catch(error){
