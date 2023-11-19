@@ -5,7 +5,6 @@ const userCalls = require('../backend/userCalls');
 
 
 router.post("/signup", async (req, res) => {
-
     try {
         // Saving using Info
         const userInfo = req.body;
@@ -20,6 +19,8 @@ router.post("/signup", async (req, res) => {
 router.post("/signin", async (req, res) => {
     try{
     const userInfo = req.body;
+    console.log(userInfo);
+
     const userId = await userCalls.searchUserInDB(userInfo);
     res.send(userId);
     }catch(error){
