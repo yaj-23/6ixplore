@@ -50,7 +50,7 @@ export default function Signup() {
    */
   const fetchId = async (userInfo) => {
     try {
-      const resp = await fetch("http://localhost:3000/signup", {
+      const resp = await fetch("http://localhost:5000/signup", {
         method: "post",
         body: JSON.stringify(userInfo),
         headers: {

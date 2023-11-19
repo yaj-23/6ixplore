@@ -13,7 +13,7 @@ export default function Dashboard() {
   let [transitionUnlike, setTransitionUnlike] = useState(false);
 
   useEffect(() => {
-    const url = "http://localhost:3000/explore";
+    const url = "http://localhost:5000/explore";
 
     const fetchEvents = async () => {
       try {
