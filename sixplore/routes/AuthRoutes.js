@@ -3,8 +3,8 @@ const router = express.Router();
 
 const userCalls = require('../backend/userCalls');
 
-router.post("/signup", async (req, res) => {
 
+router.post("/signup", async (req, res) => {
     try {
         // Saving using Info
         const userInfo = req.body;
@@ -16,10 +16,14 @@ router.post("/signup", async (req, res) => {
     }
     
 });
-
-router.post("/login", (req, res) => {
-    // Verify account credentials and return userId
-    res.send("Login");
+router.post("/signin", async (req, res) => {
+    try{
+    const userInfo = req.body;
+    const userId = await userCalls.searchUserInDB(userInfo);
+    res.send(userId);
+    }catch(error){
+        errorFunc(res, error);
+    }
 });
 
 router.delete("/delete-account", (req, res) => {

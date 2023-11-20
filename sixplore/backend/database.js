@@ -28,8 +28,8 @@ async function init ()
         const db = mongoose.connection;
 
         // Resetting DB entries so it doesnt stack every run
-        db.dropCollection(User.collection.name);
-        db.dropCollection(ExplorationItem.collection.name);
+        //db.dropCollection(User.collection.name);
+        //db.dropCollection(ExplorationItem.collection.name);
 
         // Adding User and Exploration Schemas to DB
         db.model("User", User.schema);
