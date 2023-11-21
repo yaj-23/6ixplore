@@ -28,8 +28,8 @@ async function init ()
         const db = mongoose.connection;
 
         // Resetting DB entries so it doesnt stack every run
-        //db.dropCollection(User.collection.name);
-        //db.dropCollection(ExplorationItem.collection.name);
+        // db.dropCollection(User.collection.name);
+        // db.dropCollection(ExplorationItem.collection.name);
 
         // Adding User and Exploration Schemas to DB
         db.model("User", User.schema);
@@ -37,8 +37,8 @@ async function init ()
 
         // Populating DB with dummy Data 
         // Note Exploration Data is hard capped to 23 entries (Check out data inside dummy_Data folder)
-        await addDummyExplorationData();
-        await addDummyUserData(userCount);        
+        // await addDummyExplorationData();
+        // await addDummyUserData(userCount);        
 
         return db;
 
