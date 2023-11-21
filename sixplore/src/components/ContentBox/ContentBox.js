@@ -6,7 +6,7 @@ import { Button } from '../button/Button'
 
 
 
-export default function ContentBox({eventID, name, genres, location, image, sendClickable, clickable}) {
+export default function ContentBox({eventID, name, genres, location, image, sendClickable, clickable, plans}) {
 
     const [addPlan, setAddPlan] = useState(false);
     const [planName, setPlanName] = useState("");
@@ -33,14 +33,24 @@ export default function ContentBox({eventID, name, genres, location, image, send
                         <div className="contentBox-body">
                             <h4>Create a Plan starting with {name}</h4>
                             <div>
-                            <form>
-                                <input type = "textbox" placeholder="Plan name"  required value={planName} onChange={(e) => setPlanName(e.target.value)}/>
-                            </form>
+                                <div>
+                                    <form>
+                                        <input type = "textbox" placeholder="Plan name"  required value={planName} onChange={(e) => setPlanName(e.target.value)}/>
+                                    </form>
+                                </div>
+                                <div>
+                                    <Button buttonColor='primary' buttonSize='btn-medium' buttonStyle='btn-primary' >
+                                        Add to plan
+                                    </Button>
+                                </div>
                             </div>
-                            <div>
-                            <Button buttonColor='primary' buttonSize='btn-medium' buttonStyle='btn-primary' >
-                                Add to plan
-                            </Button>
+                            <h4><strong>or click an existing plan</strong></h4>
+                            <div className="contentBox-body-plans">
+                                {plans.map((Plan) => (
+                                    <div>
+                                        <h4 style={{cursor: 'pointer'}}> {Plan} </h4>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </Modal>

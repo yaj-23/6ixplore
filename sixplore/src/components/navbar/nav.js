@@ -10,10 +10,10 @@ import account from '../../assets/account.svg'
 export default function Navbar() {
   const navigate = useNavigate ();
   const handleLogoClick =() => {
-    navigate('/');
+    navigate('/about');
   }
   const handleProfileClick =() => {
-    navigate('/signup');
+    navigate('/signin');
   }
   return (
     <>
