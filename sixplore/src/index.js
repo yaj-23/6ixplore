@@ -8,6 +8,7 @@ import Profile from "./pages/profile";
 import Signup from "./pages/signup";
 import HomePage from "./pages/homepage";
 import Signin from "./pages/signin";
+import SuggestEvent from "./pages/SuggestEvent";
 
 const router = createBrowserRouter([
   {
@@ -30,9 +31,13 @@ const router = createBrowserRouter([
     path: "/about",
     element: <HomePage/>,
   },
-   {
+  {
     path: "/signin",
     element: <Signin />,
+  },
+  {
+    path: "/suggest-event",
+    element: <SuggestEvent />,
   },
 ]);
 
