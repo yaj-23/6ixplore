@@ -5,6 +5,8 @@ import ContentBox from '../components/ContentBox/ContentBox';
 import Modal from '../components/modal/modal';
 import unlike from '../assets/xSmall.svg'
 import { Button } from '../components/button/Button'
+import { useUser } from '../UserSession'
+import { useNavigate } from 'react-router-dom';
 
 const Plans = ["Last Minute Day Trips", "Date Night ideas", "@ AM Food Runs", "FUN",];
 
@@ -68,6 +70,12 @@ export default function Profile() {
   let [modal, setModal] = useState(false);
   let [plan, setPlan] = useState(null);
   let [isClickable, setIsClickable] = useState(true);
+  const {user} = useUser();
+  const navigate = useNavigate();
+
+  if(user == null) {
+    navigate('/about');
+  }
 
   const clickModal = (Plan) => {
     //console.log(modal);

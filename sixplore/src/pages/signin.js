@@ -1,13 +1,17 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import './signin.css'
 import Navbar from '../components/navbar/nav'
 import account from '../assets/accountsignin.svg'
 import { Button } from '../components/button/Button'
+import { useUser } from '../UserSession'
 
 export default function Signin() {
   const [email, setemail] = useState('');
   const [password, setpassword] = useState('');
   let currUserId = "";
+  const {setLoggedUser} = useUser();
+  const navigate = useNavigate();
   /**
    * 
    * @param {JSON} userInfo User info in JSON format
@@ -52,7 +56,9 @@ export default function Signin() {
     // Fetchig new User ID
     currUserId = await fetchId(userInfo);
     if (currUserId) {
-      alert(`User has successfully logged in: ${currUserId}`);
+      setLoggedUser(currUserId);
+      console.log(`User has successfully logged in: ${currUserId}`);
+      navigate("/dashboard");
     }
     else {
       alert("Incorrect User Information");

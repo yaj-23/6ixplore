@@ -9,6 +9,7 @@ import Signup from "./pages/signup";
 import HomePage from "./pages/homepage";
 import Signin from "./pages/signin";
 import SuggestEvent from "./pages/SuggestEvent";
+import { AuthContextProvider } from "./UserSession";
 
 const router = createBrowserRouter([
   {
@@ -42,4 +43,6 @@ const router = createBrowserRouter([
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<RouterProvider router={router} />);
+root.render(<AuthContextProvider>
+              <RouterProvider router={router} />
+            </AuthContextProvider>);
