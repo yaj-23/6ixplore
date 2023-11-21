@@ -84,7 +84,7 @@ export default function Signup() {
     // Checking is user entry is valid
     if (emailIsValid && passlIsValid) {      
       const userInfo = {
-        user : user, 
+        name : user, 
         email : email, 
         password : password
       }; 
