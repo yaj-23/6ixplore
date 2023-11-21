@@ -126,7 +126,7 @@ export default function Profile() {
               {events.map(({ eventID, name, genres, location }) => {
                 return (
                   <div>
-                    <ContentBox eventID={eventID} location={location} name={name} genres={genres} clickable={isClickable} sendClickable={setIsClickable} />
+                    <ContentBox plans={Plans} eventID={eventID} location={location} name={name} genres={genres} clickable={isClickable} sendClickable={setIsClickable} />
                   </div>
                 )
               })}
