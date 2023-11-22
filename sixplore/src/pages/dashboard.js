@@ -37,6 +37,26 @@ export default function Dashboard() {
       fetchEvents();
   }, [transitionLike, transitionUnlike]);
 
+
+  const likeEvent = () =>{
+    const eventId = events[currentEvent]._id;
+    try {
+      const resp =  fetch(`http://localhost:5000/users/${user}-${eventId}/addFavourite`, {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      if (resp.ok) {
+        console.log("YAHAHAYA");
+      }
+    }catch (error) {
+      console.log(error);
+      return null;
+    }
+
+  }
+
   const showNextEvent = (isLike) => {
     setCurrentEvent((currentEvent) => (currentEvent + 1) % events.length);
     if (isLike) {
@@ -52,6 +72,7 @@ export default function Dashboard() {
     }
   };
 
+
   //console.log(events);
   return (
     <>
@@ -64,7 +85,7 @@ export default function Dashboard() {
           <div className="dashboard-image">
           </div>
           <div className={`dashboard-button like ${transitionLike ? 'transitionLike' : ''}`} onClick={() => showNextEvent(true)}>
-            <img src={like} alt=""/>
+            <img  onClick={likeEvent} src={like} alt=""/>
           </div>
         </div>
         <div className="dashboard-description">
