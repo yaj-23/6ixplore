@@ -9,6 +9,7 @@ import Signup from "./pages/signup";
 import HomePage from "./pages/homepage";
 import Signin from "./pages/signin";
 import SuggestEvent from "./pages/SuggestEvent";
+import Admin from "./pages/Admin";
 import { AuthContextProvider } from "./UserSession";
 
 const router = createBrowserRouter([
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
   {
     path: "/suggest-event",
     element: <SuggestEvent />,
+  },
+  {
+    path: "/admin",
+    element: <Admin />,
   },
 ]);
 

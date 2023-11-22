@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "../components/navbar/nav";
 import { Button } from '../components/button/Button'
+import { useNavigate } from 'react-router-dom';
 import './SuggestEvent.css'
 
 export default function SuggestEvent() {
@@ -10,6 +11,8 @@ export default function SuggestEvent() {
     const [stars, setStars] = useState(5);
     const [type, setType] = useState('PLACE');
     const [tags, setTags] = useState('');
+
+    const navigate = useNavigate();
 
     const submitForm = async event => {
         event.preventDefault();
@@ -25,7 +28,24 @@ export default function SuggestEvent() {
             tags: tagsArray
         }
 
-        console.log(eventObj);
+        console.log("Event Object", eventObj);
+
+        const response = await fetch('http://localhost:5000/new-event-proposal', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(eventObj)
+        });
+      
+        if (response.ok) {
+            console.log('Event object sent successfully');
+            alert("Event Proposal Successfully Requested");
+            navigate("/about");
+        } else {
+            console.log(response);
+            console.error('Error sending event object');
+        }
     }
 
     return (
