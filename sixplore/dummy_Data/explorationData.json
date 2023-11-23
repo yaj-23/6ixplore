@@ -6,7 +6,7 @@
     "stars": 4.7,
     "type": "ACTIVITY",
     "tags": ["park", "nature", "outdoors"],
-    "pictureURL": "http://example.com/highpark.jpg"
+    "pictureURL": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Hillside_Gardens_%2824677009128%29.jpg"
   },
   {
     "name": "Queen Street West",
@@ -15,7 +15,7 @@
     "stars": 4.6,
     "type": "PLACE",
     "tags": ["shopping", "trendy", "artsy"],
-    "pictureURL": "http://example.com/queenstreet.jpg"
+    "pictureURL": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Queen_St_W%2C_Toronto%2C_as_seen_between_Beverly_St_and_John_St_20170416_1.jpg"
   },
   {
     "name": "CN Tower Restaurant",
@@ -24,7 +24,7 @@
     "stars": 4.8,
     "type": "FOOD",
     "tags": ["restaurant", "view", "fine dining"],
-    "pictureURL": "http://example.com/cntowerrestaurant.jpg"
+    "pictureURL": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Inside_360_Restaurant_%282%29_%2822976554285%29.jpg"
   },
   {
     "name": "Royal Ontario Museum",
@@ -33,7 +33,7 @@
     "stars": 4.5,
     "type": "PLACE",
     "tags": ["museum", "art", "culture"],
-    "pictureURL": "http://example.com/romuseum.jpg"
+    "pictureURL": "https://live.staticflickr.com/4821/45675866765_4704184c3e_b.jpg"
   },
   {
     "name": "St. Lawrence Market",
@@ -42,7 +42,7 @@
     "stars": 4.7,
     "type": "PLACE",
     "tags": ["market", "food", "culinary"],
-    "pictureURL": "http://example.com/stlawrencemarket.jpg"
+    "pictureURL": "https://live.staticflickr.com/3412/3446341486_d5263abc75_b.jpg"
   },
   {
     "name": "Distillery District",
@@ -51,7 +51,7 @@
     "stars": 4.6,
     "type": "PLACE",
     "tags": ["historic", "shopping", "dining"],
-    "pictureURL": "http://example.com/distillerydistrict.jpg"
+    "pictureURL": "https://live.staticflickr.com/4129/4984559026_403ef101cd_b.jpg"
   },
   {
     "name": "Toronto Islands",
@@ -60,7 +60,7 @@
     "stars": 4.5,
     "type": "ACTIVITY",
     "tags": ["islands", "outdoors", "nature"],
-    "pictureURL": "http://example.com/torontoislands.jpg"
+    "pictureURL": "https://upload.wikimedia.org/wikipedia/commons/1/18/Toronto_harbour.jpg"
   },
   {
     "name": "Art Gallery of Ontario",
@@ -69,7 +69,7 @@
     "stars": 4.8,
     "type": "PLACE",
     "tags": ["art", "gallery", "culture"],
-    "pictureURL": "http://example.com/ago.jpg"
+    "pictureURL": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Art_Gallery_of_Ontario_%2837805727845%29.jpg"
   },
   {
     "name": "Kensington Market",
@@ -78,7 +78,7 @@
     "stars": 4.6,
     "type": "PLACE",
     "tags": ["market", "diverse", "shopping"],
-    "pictureURL": "http://example.com/kensingtonmarket.jpg"
+    "pictureURL": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Kensington_Market_Toronto_August_2017_04.jpg"
   },
   {
     "name": "Ripley's Aquarium of Canada",
@@ -87,7 +87,7 @@
     "stars": 4.7,
     "type": "PLACE",
     "tags": ["aquarium", "marine life", "family"],
-    "pictureURL": "http://example.com/ripleysaquarium.jpg"
+    "pictureURL": "https://upload.wikimedia.org/wikipedia/commons/4/47/Ripley%27s_Aquarium_of_Canada%2C_Toronto%2C_Ontario.jpg"
   },
   {
     "name": "Royal York Hotel",
@@ -96,7 +96,7 @@
     "stars": 4.9,
     "type": "PLACE",
     "tags": ["hotel", "luxury", "historic"],
-    "pictureURL": "http://example.com/royalyorkhotel.jpg"
+    "pictureURL": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Royal_York_Hotel_Toronto_%287974338007%29.jpg"
   },
   {
     "name": "Harbourfront Centre",
@@ -105,7 +105,7 @@
     "stars": 4.6,
     "type": "PLACE",
     "tags": ["cultural", "arts", "performances"],
-    "pictureURL": "http://example.com/harbourfrontcentre.jpg"
+    "pictureURL": "https://upload.wikimedia.org/wikipedia/commons/2/21/HarbourFront_Centre_7.JPG"
   },
   {
     "name": "Yonge-Dundas Square",
@@ -114,7 +114,7 @@
     "stars": 4.7,
     "type": "PLACE",
     "tags": ["square", "events", "entertainment"],
-    "pictureURL": "http://example.com/yongedundassquare.jpg"
+    "pictureURL": "https://live.staticflickr.com/806/40503845545_cd4d06dd4f_b.jpg"
   },
   {
     "name": "Hockey Hall of Fame",
@@ -123,7 +123,7 @@
     "stars": 4.8,
     "type": "PLACE",
     "tags": ["hockey", "sports", "history"],
-    "pictureURL": "http://example.com/hockeyhalloffame.jpg"
+    "pictureURL": "https://live.staticflickr.com/3546/3451114387_649d4d4bc3_b.jpg"
   },
   {
     "name": "Casa Loma",
@@ -132,7 +132,7 @@
     "stars": 4.7,
     "type": "PLACE",
     "tags": ["castle", "history", "tourist attraction"],
-    "pictureURL": "http://example.com/casaloma.jpg"
+    "pictureURL": "https://upload.wikimedia.org/wikipedia/commons/4/43/Exterior_of_Casa_Loma%2C_June_2012.jpg"
   },
   {
     "name": "Toronto Zoo",
@@ -141,7 +141,7 @@
     "stars": 4.6,
     "type": "PLACE",
     "tags": ["zoo", "animals", "family"],
-    "pictureURL": "http://example.com/torontozoo.jpg"
+    "pictureURL": "https://pd.w.org/2022/08/523630620a93d04c1.49987152.jpg"
   },
   {
     "name": "Ontario Science Centre",
@@ -150,7 +150,7 @@
     "stars": 4.5,
     "type": "PLACE",
     "tags": ["science", "interactive", "education"],
-    "pictureURL": "http://example.com/ontariosciencecentre.jpg"
+    "pictureURL": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Ontario_Science_Centre_%28249019835%29.jpg"
   },
   {
     "name": "Bata Shoe Museum",
@@ -159,7 +159,7 @@
     "stars": 4.7,
     "type": "PLACE",
     "tags": ["museum", "shoes", "culture"],
-    "pictureURL": "http://example.com/batashoemuseum.jpg"
+    "pictureURL": "https://live.staticflickr.com/2429/3574944904_1ab01048c6_b.jpg"
   },
   {
     "name": "Riverdale Farm",
@@ -168,7 +168,7 @@
     "stars": 4.6,
     "type": "ACTIVITY",
     "tags": ["farm", "animals", "nature"],
-    "pictureURL": "http://example.com/riverdalefarm.jpg"
+    "pictureURL": "https://live.staticflickr.com/3244/2807924615_eef6ccfd30_b.jpg"
   },
   {
     "name": "Aga Khan Museum",
@@ -177,7 +177,7 @@
     "stars": 4.8,
     "type": "PLACE",
     "tags": ["museum", "Islamic art", "culture"],
-    "pictureURL": "http://example.com/agakhanmuseum.jpg"
+    "pictureURL": "https://upload.wikimedia.org/wikipedia/commons/7/78/Aga_Khan_Museum_in_Toronto-_Exterior.jpg"
   },
   {
     "name": "Toronto Reference Library",
@@ -186,7 +186,7 @@
     "stars": 4.7,
     "type": "PLACE",
     "tags": ["library", "learning", "resources"],
-    "pictureURL": "http://example.com/torontoreferencelibrary.jpg"
+    "pictureURL": "https://upload.wikimedia.org/wikipedia/commons/1/11/Toronto_Reference_Library_April_2023.jpg"
   },
   {
     "name": "Rogers Centre",
@@ -195,7 +195,7 @@
     "stars": 4.7,
     "type": "PLACE",
     "tags": ["sports", "stadium", "events"],
-    "pictureURL": "http://example.com/rogerscentre.jpg"
+    "pictureURL": "https://upload.wikimedia.org/wikipedia/commons/6/6b/June_2012_Rogers_Centre_%28aka_Skydome%29.jpg"
   },
   {
     "name": "Chinatown Toronto",
@@ -204,6 +204,6 @@
     "stars": 4.6,
     "type": "PLACE",
     "tags": ["Chinatown", "culture", "food"],
-    "pictureURL": "http://example.com/chinatown.jpg"
+    "pictureURL": "https://live.staticflickr.com/4046/4543341054_e35eccd605_b.jpg"
   }
 ]
