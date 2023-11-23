@@ -10,9 +10,9 @@ import { useNavigate } from 'react-router-dom';
 
 const Plans = ["Last Minute Day Trips", "Date Night ideas", "@ AM Food Runs", "FUN",];
 
-var name = "Gary Deng"
-var email = "gary.deng@torontomu.ca"
-var phoneNumber = "(647) 999-9999"
+// var name = "Gary Deng"
+// var email = "gary.deng@torontomu.ca"
+// var phoneNumber = "(647) 999-9999"
 
 
 
@@ -73,6 +73,8 @@ export default function Profile() {
   let [plan, setPlan] = useState(null);
   let [isClickable, setIsClickable] = useState(true);
   let [userEvents, setUserEvents] = useState(null);
+  const [userName, setUsername] = useState(null);
+  const [userEmail, setUserEmail] = useState(null);
   const {user} = useUser();
   const navigate = useNavigate();
 
@@ -80,13 +82,35 @@ export default function Profile() {
     navigate('/about');
   }
 
+
+  
+  const fetchUserDets = async () => {
+    try{
+        const resp = await fetch(`http://localhost:5000/users/${user}/getDetails`);
+        const json = await resp.json();
+        console.log("JSONNNN: ", json);
+        // const formattedDetails = json.map(details => ({
+        //   email: details.email,
+        //   name: details.name,
+        // }));
+        setUsername(json.name);
+        setUserEmail(json.email);
+        // console.log("Formatted Details: ", formattedDetails);
+    } catch (error) {
+        console.log("error", error);
+    }
+  };
+
+  if(userName === null && userEmail === null){
+    fetchUserDets();
+  }
+
+
   useEffect (() =>{
     const fetchUserLikedEvents = async () => {
       try {
           const resp = await fetch(`http://localhost:5000/users/${user}/getFavourites`);
           const json = await resp.json();
-          console.log("RAWRESPONSE: ", json);
-
           const formattedEvents = json.map(event => ({
             eventID: event._id,
             name: event.name,
@@ -128,9 +152,12 @@ export default function Profile() {
               Profile Information
             </div>
             <div className="profile-scaleBox">
-              <h1>{name}</h1>
-              <h1>{email}</h1>
-              <h1>{phoneNumber}</h1>
+              {userName &&  (
+                <>
+                  <h1>{userName}</h1>
+                  <h1>{userEmail}</h1>
+                </>
+              ) }
             </div>
 
             <div className="profile-h2">

@@ -209,6 +209,26 @@ router.get("/randomUser", async (req, res) => {
     }
 })
 
+router.get("/users/:userId/getDetails", async (req, res) => {
+    // Getting all details from user 
+    try {
+        // Saving User Id
+        const userId = req.params.userId;
+        let userItem = {};
+
+        // Grabbing user from database
+        const user = await userCalls.getUserFromDB(userId);
+        userItem = {
+            name: user.name,
+            email: user.email
+        };
+        // Sending back user item list
+        res.send(userItem);
+    } catch (error) {
+        errorFunc(res, error);
+    }
+});
+
 module.exports = router;
 
 /**
