@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 // import { BrowserRouter } from 'react-router-dom';
 import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
-import App from "./App";
+//import App from "./App";
 import Dashboard from "./pages/dashboard";
 import Profile from "./pages/profile";
 import Signup from "./pages/signup";
@@ -15,7 +15,7 @@ import { AuthContextProvider } from "./UserSession";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <HomePage />,
   },
   {
     path: "/profile",

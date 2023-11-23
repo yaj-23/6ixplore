@@ -27,8 +27,8 @@ export default function HomePage() {
           </div>
 
           <div className = "buttons">
-            <Button buttonColor='primary' buttonSize='btn-medium' buttonStyle='btn-primary'>explore</Button>
-            <Button buttonColor='primary' buttonSize='btn-medium' buttonStyle='btn-primary'>sign in</Button>
+            <Link to='/dashboard'><Button buttonColor='primary' buttonSize='btn-medium' buttonStyle='btn-primary'>explore</Button></Link>
+            <Link to='/signup'><Button buttonColor='primary' buttonSize='btn-medium' buttonStyle='btn-primary'>sign up</Button></Link>
             <Link to='/suggest-event'><Button buttonColor='primary' buttonSize='btn-medium' buttonStyle='btn-primary'>Suggest Event</Button></Link>
           </div>
         
