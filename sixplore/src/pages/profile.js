@@ -14,68 +14,99 @@ var name = "Gary Deng"
 var email = "gary.deng@torontomu.ca"
 var phoneNumber = "(647) 999-9999"
 
-const events = [
-  {
-    eventID: 1,
-    name: "EXAMPLE EVENT",
-    name: "EXAMPLE EVENT",
-    location: "123 One Piece Avenue, Konoha A1B2C3",
-    genres: ["bar/club", "fast food", "fine dining", "escape room", "physical activity"]
-  },
 
-  {
-    eventID: 2,
-    name: "EXAMPLE EVENT",
-    location: "123 One Piece Avenue, Konoha A1B2C3",
-    genres: ["bar/club", "fast food", "fine dining", "escape room", "physical activity"]
-  },
 
-  {
-    eventID: 3,
-    name: "EXAMPLE EVENT",
-    location: "123 One Piece Avenue, Konoha A1B2C3",
-    genres: ["bar/club", "fast food", "fine dining", "escape room", "physical activity"]
-  },
-  {
-    eventID: 4,
-    name: "EXAMPLE EVENT",
-    location: "123 One Piece Avenue, Konoha A1B2C3",
-    genres: ["bar/club", "fast food", "fine dining", "escape room", "physical activity"]
-  },
+// const events = [
+//   {
+//     eventID: 1,
+//     name: "EXAMPLE EVENT",
+//     name: "EXAMPLE EVENT",
+//     location: "123 One Piece Avenue, Konoha A1B2C3",
+//     genres: ["bar/club", "fast food", "fine dining", "escape room", "physical activity"]
+//   },
 
-  {
-    eventID: 5,
-    name: "EXAMPLE EVENT",
-    location: "123 One Piece Avenue, Konoha A1B2C3",
-    genres: ["bar/club", "fast food", "fine dining", "escape room", "physical activity"]
-  },
-  {
-    eventID: 6,
-    name: "EXAMPLE EVENT",
-    location: "123 One Piece Avenue, Konoha A1B2C3",
-    genres: ["bar/club", "fast food", "fine dining", "escape room", "physical activity"]
-  },
+//   {
+//     eventID: 2,
+//     name: "EXAMPLE EVENT",
+//     location: "123 One Piece Avenue, Konoha A1B2C3",
+//     genres: ["bar/club", "fast food", "fine dining", "escape room", "physical activity"]
+//   },
 
-  {
-    eventID: 7,
-    name: "EXAMPLE EVENT",
-    location: "123 One Piece Avenue, Konoha A1B2C3",
-    genres: ["bar/club", "fast food", "fine dining", "escape room", "physical activity"]
-  },
+//   {
+//     eventID: 3,
+//     name: "EXAMPLE EVENT",
+//     location: "123 One Piece Avenue, Konoha A1B2C3",
+//     genres: ["bar/club", "fast food", "fine dining", "escape room", "physical activity"]
+//   },
+//   {
+//     eventID: 4,
+//     name: "EXAMPLE EVENT",
+//     location: "123 One Piece Avenue, Konoha A1B2C3",
+//     genres: ["bar/club", "fast food", "fine dining", "escape room", "physical activity"]
+//   },
+
+//   {
+//     eventID: 5,
+//     name: "EXAMPLE EVENT",
+//     location: "123 One Piece Avenue, Konoha A1B2C3",
+//     genres: ["bar/club", "fast food", "fine dining", "escape room", "physical activity"]
+//   },
+//   {
+//     eventID: 6,
+//     name: "EXAMPLE EVENT",
+//     location: "123 One Piece Avenue, Konoha A1B2C3",
+//     genres: ["bar/club", "fast food", "fine dining", "escape room", "physical activity"]
+//   },
+
+//   {
+//     eventID: 7,
+//     name: "EXAMPLE EVENT",
+//     location: "123 One Piece Avenue, Konoha A1B2C3",
+//     genres: ["bar/club", "fast food", "fine dining", "escape room", "physical activity"]
+//   },
   
-]
+// ]
 
 export default function Profile() {
 
   let [modal, setModal] = useState(false);
   let [plan, setPlan] = useState(null);
   let [isClickable, setIsClickable] = useState(true);
+  let [userEvents, setUserEvents] = useState(null);
   const {user} = useUser();
   const navigate = useNavigate();
 
   if(user == null) {
     navigate('/about');
   }
+
+  useEffect (() =>{
+
+    
+    const fetchUserLikedEvents = async () => {
+      try {
+          const resp = await fetch(`http://localhost:5000/users/${user}/getFavourites`);
+          const json = await resp.json();
+          console.log("RAWRESPONSE: ", json);
+
+          const formattedEvents = json.map(event => ({
+            eventID: event._id,
+            name: event.name,
+            description: event.description,
+            location: event.address,
+            genres: event.tags
+          }));
+          console.log("Formatted Events: ", formattedEvents);
+
+
+          setUserEvents(formattedEvents);
+          console.log("UserEvents: ", userEvents);
+      } catch (error) {
+          console.log("error", error);
+      }
+    }; 
+    fetchUserLikedEvents();
+  }, []);
 
   const clickModal = (Plan) => {
     //console.log(modal);
@@ -131,7 +162,7 @@ export default function Profile() {
           <div className="profile-rightDiv">
             <div className="profile-h2">Liked Destinations</div>
             <div className="profile-scaleBox2">
-              {events.map(({ eventID, name, genres, location }) => {
+              {userEvents?.map(({ eventID, name, genres, location }) => {
                 return (
                   <div>
                     <ContentBox plans={Plans} eventID={eventID} location={location} name={name} genres={genres} clickable={isClickable} sendClickable={setIsClickable} />
