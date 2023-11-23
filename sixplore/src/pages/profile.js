@@ -81,8 +81,6 @@ export default function Profile() {
   }
 
   useEffect (() =>{
-
-    
     const fetchUserLikedEvents = async () => {
       try {
           const resp = await fetch(`http://localhost:5000/users/${user}/getFavourites`);
@@ -97,8 +95,6 @@ export default function Profile() {
             genres: event.tags
           }));
           console.log("Formatted Events: ", formattedEvents);
-
-
           setUserEvents(formattedEvents);
           console.log("UserEvents: ", userEvents);
       } catch (error) {
@@ -106,7 +102,7 @@ export default function Profile() {
       }
     }; 
     fetchUserLikedEvents();
-  }, []);
+  }, [userEvents]);
 
   const clickModal = (Plan) => {
     //console.log(modal);

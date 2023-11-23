@@ -3,6 +3,7 @@ import './ContentBox.css'
 import Modal from '../modal/modal';
 import unlike from '../../assets/xSmall.svg'
 import { Button } from '../button/Button'
+import { useUser } from '../../UserSession'
 
 
 
@@ -11,6 +12,27 @@ export default function ContentBox({eventID, name, genres, location, image, send
     const [addPlan, setAddPlan] = useState(false);
     const [planName, setPlanName] = useState("");
     let [event, setEvent] = useState(null);
+    const [testClick, setTestClick] = useState(false);
+    const {user} = useUser();
+
+    const removeLIked = () =>{
+        const eventId = eventID;
+        try {
+          const resp =  fetch(`http://localhost:5000/users/${user}-${eventId}/removeFavourite`, {
+            method: "delete",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          });
+          if (resp.ok) {
+            console.log("Removed");
+          }
+          setTestClick(true);
+        }catch (error) {
+          console.log(error);
+          return null;
+        }
+    }
 
     
     const clickAddPlan = () => {
@@ -56,7 +78,7 @@ export default function ContentBox({eventID, name, genres, location, image, send
                     </Modal>
                 </div>
                 <div className="contentBox-button" >
-                <img src={unlike} alt=""/>
+                <img onClick={removeLIked} src={unlike} alt=""/>
                 </div>
             </div>
             <h4>{name}</h4>
