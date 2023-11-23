@@ -4,8 +4,11 @@ import city from "../assets/citypic.svg";
 import './homepage.css';
 import { Button } from '../components/button/Button'
 import { Link } from 'react-router-dom';
+import { useUser } from '../UserSession';
 
 export default function HomePage() {
+  const {user ,setLoggedUser} = useUser();
+
   return (
     <div>
 
@@ -27,9 +30,10 @@ export default function HomePage() {
           </div>
 
           <div className = "buttons">
-            <Link to='/dashboard'><Button buttonColor='primary' buttonSize='btn-medium' buttonStyle='btn-primary'>explore</Button></Link>
+            {user != null && <Link to='/dashboard'><Button buttonColor='primary' buttonSize='btn-medium' buttonStyle='btn-primary'>explore</Button></Link>}
+            {user == null && <Link to='/signin'><Button buttonColor='primary' buttonSize='btn-medium' buttonStyle='btn-primary'>explore</Button></Link>}
             <Link to='/signup'><Button buttonColor='primary' buttonSize='btn-medium' buttonStyle='btn-primary'>sign up</Button></Link>
-            <Link to='/suggest-event'><Button buttonColor='primary' buttonSize='btn-medium' buttonStyle='btn-primary'>Suggest Event</Button></Link>
+            <Link to='/suggest-event'><Button buttonColor='primary' buttonSize='btn-medium' buttonStyle='btn-primary'>suggest event</Button></Link>
           </div>
         
         </div>
