@@ -21,9 +21,8 @@ const maxUserPlanCount = util.MAX_USER_PLAN_COUNT;
  * Initializing Database * 
  * @returns Database
  */
-async function init () 
-{
-    try{
+async function init() {
+    try {
         await mongoose.connect(`mongodb+srv://admin:EiRWf7t6xkNcHsty@6ixplore.gt56rc8.mongodb.net/${dbName}`);
         const db = mongoose.connection;
 
@@ -55,35 +54,35 @@ async function init ()
  * Documentation: https://random-data-api.com/documentation
  * @param {Number} size Size of Users to be added to DB
  */
-async function addDummyUserData(size){
-    
+async function addDummyUserData(size) {
+
     const api_endpoint = `https://random-data-api.com/api/v2/users?size=${size}`;
     await fetch(api_endpoint, {
         method: "GET"
     })
-    .then(response => {
-        if (response.status !== 200) {
-            return "error";
-        }
-        return response.json();
-    })
-    .then(data => {
-        data.forEach(async user => {
-            const favList = await addRandomFavoriteItems();            
-            const newUser = {
-                name: `${user.first_name} ${user.last_name}`,
-                email : user.email,
-                password : user.password,
-                favourites : favList,    
-                plans: await addRandomPlanItems(favList)
+        .then(response => {
+            if (response.status !== 200) {
+                return "error";
             }
-            userCalls.addUserToDB(newUser);
+            return response.json();
+        })
+        .then(data => {
+            data.forEach(async user => {
+                const favList = await addRandomFavoriteItems();
+                const newUser = {
+                    name: `${user.first_name} ${user.last_name}`,
+                    email: user.email,
+                    password: user.password,
+                    favourites: favList,
+                    plans: await addRandomPlanItems(favList)
+                }
+                userCalls.addUserToDB(newUser);
+            });
+        })
+        .catch(error => {
+            console.log(error);
+            throw (new Error(`Error: ${error}\nSomething went wrong with the Dummy Data API`));
         });
-    })
-    .catch(error => {
-        console.log(error);
-        throw(new Error(`Error: ${error}\nSomething went wrong with the Dummy Data API`));
-    });
 }
 
 /**
@@ -108,14 +107,14 @@ async function addRandomPlanItems(favList) {
     for (let item of favList) {
         // Randomly picking Fav items to add to plan
         if (Math.random() >= 0.5) {
-            const tempItem = await explorationItemCalls.getExplorationItemFromDB(item._id);            
+            const tempItem = await explorationItemCalls.getExplorationItemFromDB(item._id);
             array.push({
                 name: tempItem.name,
                 planItem: item._id
             })
         }
     }
-    return array;   
+    return array;
 }
 
 /**
@@ -150,4 +149,4 @@ async function getRandomExplorationItems(itemCount) {
     }
 }
 
-module.exports = init
+module.exports = { init, addDummyExplorationData }

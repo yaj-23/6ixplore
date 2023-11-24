@@ -3,6 +3,7 @@ const router = express.Router();
 
 // Database Access Calls
 const explorationItemCalls = require('../backend/explorationItemCalls');
+const db_update = require('../backend/database')
 
 router.get("/explore", async (req, res) => {
     // Gets all available exploration items
@@ -19,6 +20,16 @@ router.get("/item/:itemid", async (req, res) => {
     try {
         const itemId = req.params.itemid;
         res.send(await explorationItemCalls.getExplorationItemFromDB(itemId));
+    } catch (error) {
+        console.error(error.toString());
+        res.status(500).send(error.toString());
+    }
+})
+
+router.get("/testadd", async (req, res) => {
+    // Get a unique item
+    try {
+        res.send(await db_update.addDummyExplorationData());
     } catch (error) {
         console.error(error.toString());
         res.status(500).send(error.toString());

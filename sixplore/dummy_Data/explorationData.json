@@ -1,209 +1,991 @@
 [
-  {
-    "name": "High Park",
-    "description": "Explore Toronto's largest public park",
-    "address": "1873 Bloor St W, Toronto, ON, Canada",
-    "stars": 4.7,
-    "type": "ACTIVITY",
-    "tags": ["park", "nature", "outdoors"],
-    "pictureURL": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Hillside_Gardens_%2824677009128%29.jpg"
-  },
-  {
-    "name": "Queen Street West",
-    "description": "A trendy and eclectic shopping district",
-    "address": "789 Queen St W, Toronto, ON, Canada",
-    "stars": 4.6,
-    "type": "PLACE",
-    "tags": ["shopping", "trendy", "artsy"],
-    "pictureURL": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Queen_St_W%2C_Toronto%2C_as_seen_between_Beverly_St_and_John_St_20170416_1.jpg"
-  },
-  {
-    "name": "CN Tower Restaurant",
-    "description": "Dine with a panoramic view of Toronto's skyline",
-    "address": "301 Front St W, Toronto, ON, Canada",
-    "stars": 4.8,
-    "type": "FOOD",
-    "tags": ["restaurant", "view", "fine dining"],
-    "pictureURL": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Inside_360_Restaurant_%282%29_%2822976554285%29.jpg"
-  },
-  {
-    "name": "Royal Ontario Museum",
-    "description": "Immerse yourself in art, culture, and natural history",
-    "address": "100 Queen's Park, Toronto, ON, Canada",
-    "stars": 4.5,
-    "type": "PLACE",
-    "tags": ["museum", "art", "culture"],
-    "pictureURL": "https://live.staticflickr.com/4821/45675866765_4704184c3e_b.jpg"
-  },
-  {
-    "name": "St. Lawrence Market",
-    "description": "Experience Toronto's premier food market",
-    "address": "93 Front St E, Toronto, ON, Canada",
-    "stars": 4.7,
-    "type": "PLACE",
-    "tags": ["market", "food", "culinary"],
-    "pictureURL": "https://live.staticflickr.com/3412/3446341486_d5263abc75_b.jpg"
-  },
-  {
-    "name": "Distillery District",
-    "description": "Historic site with shops, galleries, and restaurants",
-    "address": "55 Mill St, Toronto, ON, Canada",
-    "stars": 4.6,
-    "type": "PLACE",
-    "tags": ["historic", "shopping", "dining"],
-    "pictureURL": "https://live.staticflickr.com/4129/4984559026_403ef101cd_b.jpg"
-  },
-  {
-    "name": "Toronto Islands",
-    "description": "A group of small islands offering outdoor activities",
-    "address": "9 Queens Quay W, Toronto, ON, Canada",
-    "stars": 4.5,
-    "type": "ACTIVITY",
-    "tags": ["islands", "outdoors", "nature"],
-    "pictureURL": "https://upload.wikimedia.org/wikipedia/commons/1/18/Toronto_harbour.jpg"
-  },
-  {
-    "name": "Art Gallery of Ontario",
-    "description": "Explore a collection of over 90,000 works of art",
-    "address": "317 Dundas St W, Toronto, ON, Canada",
-    "stars": 4.8,
-    "type": "PLACE",
-    "tags": ["art", "gallery", "culture"],
-    "pictureURL": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Art_Gallery_of_Ontario_%2837805727845%29.jpg"
-  },
-  {
-    "name": "Kensington Market",
-    "description": "Vibrant neighborhood with diverse shops and eateries",
-    "address": "65 Kensington Ave, Toronto, ON, Canada",
-    "stars": 4.6,
-    "type": "PLACE",
-    "tags": ["market", "diverse", "shopping"],
-    "pictureURL": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Kensington_Market_Toronto_August_2017_04.jpg"
-  },
-  {
-    "name": "Ripley's Aquarium of Canada",
-    "description": "Get up close with marine life in downtown Toronto",
-    "address": "288 Bremner Blvd, Toronto, ON, Canada",
-    "stars": 4.7,
-    "type": "PLACE",
-    "tags": ["aquarium", "marine life", "family"],
-    "pictureURL": "https://upload.wikimedia.org/wikipedia/commons/4/47/Ripley%27s_Aquarium_of_Canada%2C_Toronto%2C_Ontario.jpg"
-  },
-  {
-    "name": "Royal York Hotel",
-    "description": "Experience luxury at Toronto's iconic hotel",
-    "address": "100 Front St W, Toronto, ON, Canada",
-    "stars": 4.9,
-    "type": "PLACE",
-    "tags": ["hotel", "luxury", "historic"],
-    "pictureURL": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Royal_York_Hotel_Toronto_%287974338007%29.jpg"
-  },
-  {
-    "name": "Harbourfront Centre",
-    "description": "Cultural hub with arts, performances, and events",
-    "address": "235 Queens Quay W, Toronto, ON, Canada",
-    "stars": 4.6,
-    "type": "PLACE",
-    "tags": ["cultural", "arts", "performances"],
-    "pictureURL": "https://upload.wikimedia.org/wikipedia/commons/2/21/HarbourFront_Centre_7.JPG"
-  },
-  {
-    "name": "Yonge-Dundas Square",
-    "description": "Toronto's Times Square with events and entertainment",
-    "address": "1 Dundas St E, Toronto, ON, Canada",
-    "stars": 4.7,
-    "type": "PLACE",
-    "tags": ["square", "events", "entertainment"],
-    "pictureURL": "https://live.staticflickr.com/806/40503845545_cd4d06dd4f_b.jpg"
-  },
-  {
-    "name": "Hockey Hall of Fame",
-    "description": "Celebrate the history of hockey in Canada",
-    "address": "30 Yonge St, Toronto, ON, Canada",
-    "stars": 4.8,
-    "type": "PLACE",
-    "tags": ["hockey", "sports", "history"],
-    "pictureURL": "https://live.staticflickr.com/3546/3451114387_649d4d4bc3_b.jpg"
-  },
-  {
-    "name": "Casa Loma",
-    "description": "Explore a historic castle in the heart of Toronto",
-    "address": "1 Austin Terrace, Toronto, ON, Canada",
-    "stars": 4.7,
-    "type": "PLACE",
-    "tags": ["castle", "history", "tourist attraction"],
-    "pictureURL": "https://upload.wikimedia.org/wikipedia/commons/4/43/Exterior_of_Casa_Loma%2C_June_2012.jpg"
-  },
-  {
-    "name": "Toronto Zoo",
-    "description": "Visit one of the largest zoos in the world",
-    "address": "2000 Meadowvale Rd, Toronto, ON, Canada",
-    "stars": 4.6,
-    "type": "PLACE",
-    "tags": ["zoo", "animals", "family"],
-    "pictureURL": "https://pd.w.org/2022/08/523630620a93d04c1.49987152.jpg"
-  },
-  {
-    "name": "Ontario Science Centre",
-    "description": "Engage in interactive science exhibits and displays",
-    "address": "770 Don Mills Rd, Toronto, ON, Canada",
-    "stars": 4.5,
-    "type": "PLACE",
-    "tags": ["science", "interactive", "education"],
-    "pictureURL": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Ontario_Science_Centre_%28249019835%29.jpg"
-  },
-  {
-    "name": "Bata Shoe Museum",
-    "description": "Explore the history of footwear from around the world",
-    "address": "327 Bloor St W, Toronto, ON, Canada",
-    "stars": 4.7,
-    "type": "PLACE",
-    "tags": ["museum", "shoes", "culture"],
-    "pictureURL": "https://live.staticflickr.com/2429/3574944904_1ab01048c6_b.jpg"
-  },
-  {
-    "name": "Riverdale Farm",
-    "description": "Experience a working farm in the heart of the city",
-    "address": "201 Winchester St, Toronto, ON, Canada",
-    "stars": 4.6,
-    "type": "ACTIVITY",
-    "tags": ["farm", "animals", "nature"],
-    "pictureURL": "https://live.staticflickr.com/3244/2807924615_eef6ccfd30_b.jpg"
-  },
-  {
-    "name": "Aga Khan Museum",
-    "description": "Discover Islamic art, culture, and heritage",
-    "address": "77 Wynford Dr, Toronto, ON, Canada",
-    "stars": 4.8,
-    "type": "PLACE",
-    "tags": ["museum", "Islamic art", "culture"],
-    "pictureURL": "https://upload.wikimedia.org/wikipedia/commons/7/78/Aga_Khan_Museum_in_Toronto-_Exterior.jpg"
-  },
-  {
-    "name": "Toronto Reference Library",
-    "description": "A hub of knowledge and resources for learning",
-    "address": "789 Yonge St, Toronto, ON, Canada",
-    "stars": 4.7,
-    "type": "PLACE",
-    "tags": ["library", "learning", "resources"],
-    "pictureURL": "https://upload.wikimedia.org/wikipedia/commons/1/11/Toronto_Reference_Library_April_2023.jpg"
-  },
-  {
-    "name": "Rogers Centre",
-    "description": "Home to the Toronto Blue Jays and major events",
-    "address": "1 Blue Jays Way, Toronto, ON, Canada",
-    "stars": 4.7,
-    "type": "PLACE",
-    "tags": ["sports", "stadium", "events"],
-    "pictureURL": "https://upload.wikimedia.org/wikipedia/commons/6/6b/June_2012_Rogers_Centre_%28aka_Skydome%29.jpg"
-  },
-  {
-    "name": "Chinatown Toronto",
-    "description": "Explore the vibrant sights and flavors of Chinatown",
-    "address": "420 Spadina Ave, Toronto, ON, Canada",
-    "stars": 4.6,
-    "type": "PLACE",
-    "tags": ["Chinatown", "culture", "food"],
-    "pictureURL": "https://live.staticflickr.com/4046/4543341054_e35eccd605_b.jpg"
-  }
+    {
+        "name": "High Park",
+        "description": "Explore Toronto's largest public park",
+        "address": "1873 Bloor St W, Toronto, ON, Canada",
+        "stars": 4.7,
+        "type": "ACTIVITY",
+        "tags": [
+            "park",
+            "nature",
+            "outdoors"
+        ],
+        "pictureURL": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Hillside_Gardens_%2824677009128%29.jpg",
+        "hours": {
+            "Monday": {
+                "start": "9:00 AM",
+                "end": "12:00 AM"
+            },
+            "Tuesday": {
+                "start": "10:00 AM",
+                "end": "12:00 AM"
+            },
+            "Wednesday": {
+                "start": "9:00 AM",
+                "end": "12:00 AM"
+            },
+            "Thursday": {
+                "start": "8:00 AM",
+                "end": "11:00 PM"
+            },
+            "Friday": {
+                "start": "7:00 AM",
+                "end": "12:00 AM"
+            },
+            "Saturday": {
+                "start": "10:00 AM",
+                "end": "1:00 AM"
+            },
+            "Sunday": {
+                "start": "9:00 AM",
+                "end": "10:00 PM"
+            }
+        }
+    },
+    {
+        "name": "Queen Street West",
+        "description": "A trendy and eclectic shopping district",
+        "address": "789 Queen St W, Toronto, ON, Canada",
+        "stars": 4.6,
+        "type": "PLACE",
+        "tags": [
+            "shopping",
+            "trendy",
+            "artsy"
+        ],
+        "pictureURL": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Queen_St_W%2C_Toronto%2C_as_seen_between_Beverly_St_and_John_St_20170416_1.jpg",
+        "hours": {
+            "Monday": {
+                "start": "10:00 AM",
+                "end": "11:00 PM"
+            },
+            "Tuesday": {
+                "start": "9:00 AM",
+                "end": "1:00 AM"
+            },
+            "Wednesday": {
+                "start": "10:00 AM",
+                "end": "1:00 AM"
+            },
+            "Thursday": {
+                "start": "7:00 AM",
+                "end": "11:00 PM"
+            },
+            "Friday": {
+                "start": "9:00 AM",
+                "end": "12:00 AM"
+            },
+            "Saturday": {
+                "start": "9:00 AM",
+                "end": "10:00 PM"
+            },
+            "Sunday": {
+                "start": "10:00 AM",
+                "end": "12:00 AM"
+            }
+        }
+    },
+    {
+        "name": "CN Tower Restaurant",
+        "description": "Dine with a panoramic view of Toronto's skyline",
+        "address": "301 Front St W, Toronto, ON, Canada",
+        "stars": 4.8,
+        "type": "FOOD",
+        "tags": [
+            "restaurant",
+            "view",
+            "fine dining"
+        ],
+        "pictureURL": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Inside_360_Restaurant_%282%29_%2822976554285%29.jpg",
+        "hours": {
+            "Monday": {
+                "start": "10:00 AM",
+                "end": "11:00 PM"
+            },
+            "Tuesday": {
+                "start": "9:00 AM",
+                "end": "11:00 PM"
+            },
+            "Wednesday": {
+                "start": "7:00 AM",
+                "end": "1:00 AM"
+            },
+            "Thursday": {
+                "start": "8:00 AM",
+                "end": "12:00 AM"
+            },
+            "Friday": {
+                "start": "8:00 AM",
+                "end": "1:00 AM"
+            },
+            "Saturday": {
+                "start": "8:00 AM",
+                "end": "1:00 AM"
+            },
+            "Sunday": {
+                "start": "7:00 AM",
+                "end": "10:00 PM"
+            }
+        }
+    },
+    {
+        "name": "Royal Ontario Museum",
+        "description": "Immerse yourself in art, culture, and natural history",
+        "address": "100 Queen's Park, Toronto, ON, Canada",
+        "stars": 4.5,
+        "type": "PLACE",
+        "tags": [
+            "museum",
+            "art",
+            "culture"
+        ],
+        "pictureURL": "https://live.staticflickr.com/4821/45675866765_4704184c3e_b.jpg",
+        "hours": {
+            "Monday": {
+                "start": "10:00 AM",
+                "end": "12:00 AM"
+            },
+            "Tuesday": {
+                "start": "7:00 AM",
+                "end": "11:00 PM"
+            },
+            "Wednesday": {
+                "start": "10:00 AM",
+                "end": "1:00 AM"
+            },
+            "Thursday": {
+                "start": "7:00 AM",
+                "end": "11:00 PM"
+            },
+            "Friday": {
+                "start": "9:00 AM",
+                "end": "12:00 AM"
+            },
+            "Saturday": {
+                "start": "7:00 AM",
+                "end": "11:00 PM"
+            },
+            "Sunday": {
+                "start": "8:00 AM",
+                "end": "12:00 AM"
+            }
+        }
+    },
+    {
+        "name": "St. Lawrence Market",
+        "description": "Experience Toronto's premier food market",
+        "address": "93 Front St E, Toronto, ON, Canada",
+        "stars": 4.7,
+        "type": "PLACE",
+        "tags": [
+            "market",
+            "food",
+            "culinary"
+        ],
+        "pictureURL": "https://live.staticflickr.com/3412/3446341486_d5263abc75_b.jpg",
+        "hours": {
+            "Monday": {
+                "start": "9:00 AM",
+                "end": "11:00 PM"
+            },
+            "Tuesday": {
+                "start": "9:00 AM",
+                "end": "1:00 AM"
+            },
+            "Wednesday": {
+                "start": "10:00 AM",
+                "end": "1:00 AM"
+            },
+            "Thursday": {
+                "start": "7:00 AM",
+                "end": "12:00 AM"
+            },
+            "Friday": {
+                "start": "10:00 AM",
+                "end": "1:00 AM"
+            },
+            "Saturday": {
+                "start": "10:00 AM",
+                "end": "1:00 AM"
+            },
+            "Sunday": {
+                "start": "10:00 AM",
+                "end": "11:00 PM"
+            }
+        }
+    },
+    {
+        "name": "Distillery District",
+        "description": "Historic site with shops, galleries, and restaurants",
+        "address": "55 Mill St, Toronto, ON, Canada",
+        "stars": 4.6,
+        "type": "PLACE",
+        "tags": [
+            "historic",
+            "shopping",
+            "dining"
+        ],
+        "pictureURL": "https://live.staticflickr.com/4129/4984559026_403ef101cd_b.jpg",
+        "hours": {
+            "Monday": {
+                "start": "10:00 AM",
+                "end": "1:00 AM"
+            },
+            "Tuesday": {
+                "start": "8:00 AM",
+                "end": "12:00 AM"
+            },
+            "Wednesday": {
+                "start": "9:00 AM",
+                "end": "12:00 AM"
+            },
+            "Thursday": {
+                "start": "9:00 AM",
+                "end": "11:00 PM"
+            },
+            "Friday": {
+                "start": "8:00 AM",
+                "end": "12:00 AM"
+            },
+            "Saturday": {
+                "start": "10:00 AM",
+                "end": "10:00 PM"
+            },
+            "Sunday": {
+                "start": "9:00 AM",
+                "end": "1:00 AM"
+            }
+        }
+    },
+    {
+        "name": "Toronto Islands",
+        "description": "A group of small islands offering outdoor activities",
+        "address": "9 Queens Quay W, Toronto, ON, Canada",
+        "stars": 4.5,
+        "type": "ACTIVITY",
+        "tags": [
+            "islands",
+            "outdoors",
+            "nature"
+        ],
+        "pictureURL": "https://upload.wikimedia.org/wikipedia/commons/1/18/Toronto_harbour.jpg",
+        "hours": {
+            "Monday": {
+                "start": "9:00 AM",
+                "end": "11:00 PM"
+            },
+            "Tuesday": {
+                "start": "9:00 AM",
+                "end": "1:00 AM"
+            },
+            "Wednesday": {
+                "start": "7:00 AM",
+                "end": "10:00 PM"
+            },
+            "Thursday": {
+                "start": "9:00 AM",
+                "end": "1:00 AM"
+            },
+            "Friday": {
+                "start": "7:00 AM",
+                "end": "12:00 AM"
+            },
+            "Saturday": {
+                "start": "10:00 AM",
+                "end": "12:00 AM"
+            },
+            "Sunday": {
+                "start": "7:00 AM",
+                "end": "1:00 AM"
+            }
+        }
+    },
+    {
+        "name": "Art Gallery of Ontario",
+        "description": "Explore a collection of over 90,000 works of art",
+        "address": "317 Dundas St W, Toronto, ON, Canada",
+        "stars": 4.8,
+        "type": "PLACE",
+        "tags": [
+            "art",
+            "gallery",
+            "culture"
+        ],
+        "pictureURL": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Art_Gallery_of_Ontario_%2837805727845%29.jpg",
+        "hours": {
+            "Monday": {
+                "start": "9:00 AM",
+                "end": "12:00 AM"
+            },
+            "Tuesday": {
+                "start": "9:00 AM",
+                "end": "10:00 PM"
+            },
+            "Wednesday": {
+                "start": "8:00 AM",
+                "end": "10:00 PM"
+            },
+            "Thursday": {
+                "start": "7:00 AM",
+                "end": "12:00 AM"
+            },
+            "Friday": {
+                "start": "9:00 AM",
+                "end": "1:00 AM"
+            },
+            "Saturday": {
+                "start": "10:00 AM",
+                "end": "10:00 PM"
+            },
+            "Sunday": {
+                "start": "9:00 AM",
+                "end": "10:00 PM"
+            }
+        }
+    },
+    {
+        "name": "Kensington Market",
+        "description": "Vibrant neighborhood with diverse shops and eateries",
+        "address": "65 Kensington Ave, Toronto, ON, Canada",
+        "stars": 4.6,
+        "type": "PLACE",
+        "tags": [
+            "market",
+            "diverse",
+            "shopping"
+        ],
+        "pictureURL": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Kensington_Market_Toronto_August_2017_04.jpg",
+        "hours": {
+            "Monday": {
+                "start": "8:00 AM",
+                "end": "12:00 AM"
+            },
+            "Tuesday": {
+                "start": "8:00 AM",
+                "end": "10:00 PM"
+            },
+            "Wednesday": {
+                "start": "9:00 AM",
+                "end": "1:00 AM"
+            },
+            "Thursday": {
+                "start": "9:00 AM",
+                "end": "1:00 AM"
+            },
+            "Friday": {
+                "start": "10:00 AM",
+                "end": "1:00 AM"
+            },
+            "Saturday": {
+                "start": "9:00 AM",
+                "end": "1:00 AM"
+            },
+            "Sunday": {
+                "start": "10:00 AM",
+                "end": "12:00 AM"
+            }
+        }
+    },
+    {
+        "name": "Ripley's Aquarium of Canada",
+        "description": "Get up close with marine life in downtown Toronto",
+        "address": "288 Bremner Blvd, Toronto, ON, Canada",
+        "stars": 4.7,
+        "type": "PLACE",
+        "tags": [
+            "aquarium",
+            "marine life",
+            "family"
+        ],
+        "pictureURL": "https://upload.wikimedia.org/wikipedia/commons/4/47/Ripley%27s_Aquarium_of_Canada%2C_Toronto%2C_Ontario.jpg",
+        "hours": {
+            "Monday": {
+                "start": "10:00 AM",
+                "end": "12:00 AM"
+            },
+            "Tuesday": {
+                "start": "8:00 AM",
+                "end": "12:00 AM"
+            },
+            "Wednesday": {
+                "start": "10:00 AM",
+                "end": "11:00 PM"
+            },
+            "Thursday": {
+                "start": "8:00 AM",
+                "end": "11:00 PM"
+            },
+            "Friday": {
+                "start": "8:00 AM",
+                "end": "11:00 PM"
+            },
+            "Saturday": {
+                "start": "7:00 AM",
+                "end": "1:00 AM"
+            },
+            "Sunday": {
+                "start": "7:00 AM",
+                "end": "11:00 PM"
+            }
+        }
+    },
+    {
+        "name": "Royal York Hotel",
+        "description": "Experience luxury at Toronto's iconic hotel",
+        "address": "100 Front St W, Toronto, ON, Canada",
+        "stars": 4.9,
+        "type": "PLACE",
+        "tags": [
+            "hotel",
+            "luxury",
+            "historic"
+        ],
+        "pictureURL": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Royal_York_Hotel_Toronto_%287974338007%29.jpg",
+        "hours": {
+            "Monday": {
+                "start": "7:00 AM",
+                "end": "1:00 AM"
+            },
+            "Tuesday": {
+                "start": "7:00 AM",
+                "end": "11:00 PM"
+            },
+            "Wednesday": {
+                "start": "10:00 AM",
+                "end": "1:00 AM"
+            },
+            "Thursday": {
+                "start": "7:00 AM",
+                "end": "10:00 PM"
+            },
+            "Friday": {
+                "start": "10:00 AM",
+                "end": "1:00 AM"
+            },
+            "Saturday": {
+                "start": "8:00 AM",
+                "end": "10:00 PM"
+            },
+            "Sunday": {
+                "start": "9:00 AM",
+                "end": "1:00 AM"
+            }
+        }
+    },
+    {
+        "name": "Harbourfront Centre",
+        "description": "Cultural hub with arts, performances, and events",
+        "address": "235 Queens Quay W, Toronto, ON, Canada",
+        "stars": 4.6,
+        "type": "PLACE",
+        "tags": [
+            "cultural",
+            "arts",
+            "performances"
+        ],
+        "pictureURL": "https://upload.wikimedia.org/wikipedia/commons/2/21/HarbourFront_Centre_7.JPG",
+        "hours": {
+            "Monday": {
+                "start": "9:00 AM",
+                "end": "12:00 AM"
+            },
+            "Tuesday": {
+                "start": "7:00 AM",
+                "end": "12:00 AM"
+            },
+            "Wednesday": {
+                "start": "8:00 AM",
+                "end": "12:00 AM"
+            },
+            "Thursday": {
+                "start": "9:00 AM",
+                "end": "10:00 PM"
+            },
+            "Friday": {
+                "start": "7:00 AM",
+                "end": "11:00 PM"
+            },
+            "Saturday": {
+                "start": "10:00 AM",
+                "end": "11:00 PM"
+            },
+            "Sunday": {
+                "start": "8:00 AM",
+                "end": "11:00 PM"
+            }
+        }
+    },
+    {
+        "name": "Yonge-Dundas Square",
+        "description": "Toronto's Times Square with events and entertainment",
+        "address": "1 Dundas St E, Toronto, ON, Canada",
+        "stars": 4.7,
+        "type": "PLACE",
+        "tags": [
+            "square",
+            "events",
+            "entertainment"
+        ],
+        "pictureURL": "https://live.staticflickr.com/806/40503845545_cd4d06dd4f_b.jpg",
+        "hours": {
+            "Monday": {
+                "start": "8:00 AM",
+                "end": "12:00 AM"
+            },
+            "Tuesday": {
+                "start": "8:00 AM",
+                "end": "11:00 PM"
+            },
+            "Wednesday": {
+                "start": "10:00 AM",
+                "end": "12:00 AM"
+            },
+            "Thursday": {
+                "start": "10:00 AM",
+                "end": "1:00 AM"
+            },
+            "Friday": {
+                "start": "7:00 AM",
+                "end": "1:00 AM"
+            },
+            "Saturday": {
+                "start": "9:00 AM",
+                "end": "1:00 AM"
+            },
+            "Sunday": {
+                "start": "8:00 AM",
+                "end": "11:00 PM"
+            }
+        }
+    },
+    {
+        "name": "Hockey Hall of Fame",
+        "description": "Celebrate the history of hockey in Canada",
+        "address": "30 Yonge St, Toronto, ON, Canada",
+        "stars": 4.8,
+        "type": "PLACE",
+        "tags": [
+            "hockey",
+            "sports",
+            "history"
+        ],
+        "pictureURL": "https://live.staticflickr.com/3546/3451114387_649d4d4bc3_b.jpg",
+        "hours": {
+            "Monday": {
+                "start": "7:00 AM",
+                "end": "11:00 PM"
+            },
+            "Tuesday": {
+                "start": "9:00 AM",
+                "end": "1:00 AM"
+            },
+            "Wednesday": {
+                "start": "8:00 AM",
+                "end": "11:00 PM"
+            },
+            "Thursday": {
+                "start": "8:00 AM",
+                "end": "10:00 PM"
+            },
+            "Friday": {
+                "start": "8:00 AM",
+                "end": "1:00 AM"
+            },
+            "Saturday": {
+                "start": "7:00 AM",
+                "end": "12:00 AM"
+            },
+            "Sunday": {
+                "start": "8:00 AM",
+                "end": "11:00 PM"
+            }
+        }
+    },
+    {
+        "name": "Casa Loma",
+        "description": "Explore a historic castle in the heart of Toronto",
+        "address": "1 Austin Terrace, Toronto, ON, Canada",
+        "stars": 4.7,
+        "type": "PLACE",
+        "tags": [
+            "castle",
+            "history",
+            "tourist attraction"
+        ],
+        "pictureURL": "https://upload.wikimedia.org/wikipedia/commons/4/43/Exterior_of_Casa_Loma%2C_June_2012.jpg",
+        "hours": {
+            "Monday": {
+                "start": "7:00 AM",
+                "end": "10:00 PM"
+            },
+            "Tuesday": {
+                "start": "8:00 AM",
+                "end": "1:00 AM"
+            },
+            "Wednesday": {
+                "start": "8:00 AM",
+                "end": "11:00 PM"
+            },
+            "Thursday": {
+                "start": "8:00 AM",
+                "end": "10:00 PM"
+            },
+            "Friday": {
+                "start": "9:00 AM",
+                "end": "1:00 AM"
+            },
+            "Saturday": {
+                "start": "10:00 AM",
+                "end": "1:00 AM"
+            },
+            "Sunday": {
+                "start": "7:00 AM",
+                "end": "10:00 PM"
+            }
+        }
+    },
+    {
+        "name": "Toronto Zoo",
+        "description": "Visit one of the largest zoos in the world",
+        "address": "2000 Meadowvale Rd, Toronto, ON, Canada",
+        "stars": 4.6,
+        "type": "PLACE",
+        "tags": [
+            "zoo",
+            "animals",
+            "family"
+        ],
+        "pictureURL": "https://pd.w.org/2022/08/523630620a93d04c1.49987152.jpg",
+        "hours": {
+            "Monday": {
+                "start": "7:00 AM",
+                "end": "11:00 PM"
+            },
+            "Tuesday": {
+                "start": "10:00 AM",
+                "end": "11:00 PM"
+            },
+            "Wednesday": {
+                "start": "7:00 AM",
+                "end": "10:00 PM"
+            },
+            "Thursday": {
+                "start": "9:00 AM",
+                "end": "1:00 AM"
+            },
+            "Friday": {
+                "start": "10:00 AM",
+                "end": "10:00 PM"
+            },
+            "Saturday": {
+                "start": "9:00 AM",
+                "end": "12:00 AM"
+            },
+            "Sunday": {
+                "start": "10:00 AM",
+                "end": "11:00 PM"
+            }
+        }
+    },
+    {
+        "name": "Ontario Science Centre",
+        "description": "Engage in interactive science exhibits and displays",
+        "address": "770 Don Mills Rd, Toronto, ON, Canada",
+        "stars": 4.5,
+        "type": "PLACE",
+        "tags": [
+            "science",
+            "interactive",
+            "education"
+        ],
+        "pictureURL": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Ontario_Science_Centre_%28249019835%29.jpg",
+        "hours": {
+            "Monday": {
+                "start": "9:00 AM",
+                "end": "12:00 AM"
+            },
+            "Tuesday": {
+                "start": "7:00 AM",
+                "end": "11:00 PM"
+            },
+            "Wednesday": {
+                "start": "9:00 AM",
+                "end": "1:00 AM"
+            },
+            "Thursday": {
+                "start": "8:00 AM",
+                "end": "11:00 PM"
+            },
+            "Friday": {
+                "start": "7:00 AM",
+                "end": "11:00 PM"
+            },
+            "Saturday": {
+                "start": "8:00 AM",
+                "end": "11:00 PM"
+            },
+            "Sunday": {
+                "start": "7:00 AM",
+                "end": "11:00 PM"
+            }
+        }
+    },
+    {
+        "name": "Bata Shoe Museum",
+        "description": "Explore the history of footwear from around the world",
+        "address": "327 Bloor St W, Toronto, ON, Canada",
+        "stars": 4.7,
+        "type": "PLACE",
+        "tags": [
+            "museum",
+            "shoes",
+            "culture"
+        ],
+        "pictureURL": "https://live.staticflickr.com/2429/3574944904_1ab01048c6_b.jpg",
+        "hours": {
+            "Monday": {
+                "start": "10:00 AM",
+                "end": "10:00 PM"
+            },
+            "Tuesday": {
+                "start": "9:00 AM",
+                "end": "11:00 PM"
+            },
+            "Wednesday": {
+                "start": "10:00 AM",
+                "end": "1:00 AM"
+            },
+            "Thursday": {
+                "start": "10:00 AM",
+                "end": "1:00 AM"
+            },
+            "Friday": {
+                "start": "8:00 AM",
+                "end": "12:00 AM"
+            },
+            "Saturday": {
+                "start": "7:00 AM",
+                "end": "1:00 AM"
+            },
+            "Sunday": {
+                "start": "10:00 AM",
+                "end": "10:00 PM"
+            }
+        }
+    },
+    {
+        "name": "Riverdale Farm",
+        "description": "Experience a working farm in the heart of the city",
+        "address": "201 Winchester St, Toronto, ON, Canada",
+        "stars": 4.6,
+        "type": "ACTIVITY",
+        "tags": [
+            "farm",
+            "animals",
+            "nature"
+        ],
+        "pictureURL": "https://live.staticflickr.com/3244/2807924615_eef6ccfd30_b.jpg",
+        "hours": {
+            "Monday": {
+                "start": "9:00 AM",
+                "end": "10:00 PM"
+            },
+            "Tuesday": {
+                "start": "10:00 AM",
+                "end": "12:00 AM"
+            },
+            "Wednesday": {
+                "start": "10:00 AM",
+                "end": "11:00 PM"
+            },
+            "Thursday": {
+                "start": "7:00 AM",
+                "end": "11:00 PM"
+            },
+            "Friday": {
+                "start": "7:00 AM",
+                "end": "10:00 PM"
+            },
+            "Saturday": {
+                "start": "10:00 AM",
+                "end": "12:00 AM"
+            },
+            "Sunday": {
+                "start": "10:00 AM",
+                "end": "12:00 AM"
+            }
+        }
+    },
+    {
+        "name": "Aga Khan Museum",
+        "description": "Discover Islamic art, culture, and heritage",
+        "address": "77 Wynford Dr, Toronto, ON, Canada",
+        "stars": 4.8,
+        "type": "PLACE",
+        "tags": [
+            "museum",
+            "Islamic art",
+            "culture"
+        ],
+        "pictureURL": "https://upload.wikimedia.org/wikipedia/commons/7/78/Aga_Khan_Museum_in_Toronto-_Exterior.jpg",
+        "hours": {
+            "Monday": {
+                "start": "7:00 AM",
+                "end": "12:00 AM"
+            },
+            "Tuesday": {
+                "start": "7:00 AM",
+                "end": "11:00 PM"
+            },
+            "Wednesday": {
+                "start": "8:00 AM",
+                "end": "1:00 AM"
+            },
+            "Thursday": {
+                "start": "10:00 AM",
+                "end": "10:00 PM"
+            },
+            "Friday": {
+                "start": "7:00 AM",
+                "end": "11:00 PM"
+            },
+            "Saturday": {
+                "start": "10:00 AM",
+                "end": "12:00 AM"
+            },
+            "Sunday": {
+                "start": "7:00 AM",
+                "end": "11:00 PM"
+            }
+        }
+    },
+    {
+        "name": "Toronto Reference Library",
+        "description": "A hub of knowledge and resources for learning",
+        "address": "789 Yonge St, Toronto, ON, Canada",
+        "stars": 4.7,
+        "type": "PLACE",
+        "tags": [
+            "library",
+            "learning",
+            "resources"
+        ],
+        "pictureURL": "https://upload.wikimedia.org/wikipedia/commons/1/11/Toronto_Reference_Library_April_2023.jpg",
+        "hours": {
+            "Monday": {
+                "start": "8:00 AM",
+                "end": "1:00 AM"
+            },
+            "Tuesday": {
+                "start": "7:00 AM",
+                "end": "11:00 PM"
+            },
+            "Wednesday": {
+                "start": "8:00 AM",
+                "end": "11:00 PM"
+            },
+            "Thursday": {
+                "start": "8:00 AM",
+                "end": "1:00 AM"
+            },
+            "Friday": {
+                "start": "9:00 AM",
+                "end": "12:00 AM"
+            },
+            "Saturday": {
+                "start": "9:00 AM",
+                "end": "10:00 PM"
+            },
+            "Sunday": {
+                "start": "10:00 AM",
+                "end": "10:00 PM"
+            }
+        }
+    },
+    {
+        "name": "Rogers Centre",
+        "description": "Home to the Toronto Blue Jays and major events",
+        "address": "1 Blue Jays Way, Toronto, ON, Canada",
+        "stars": 4.7,
+        "type": "PLACE",
+        "tags": [
+            "sports",
+            "stadium",
+            "events"
+        ],
+        "pictureURL": "https://upload.wikimedia.org/wikipedia/commons/6/6b/June_2012_Rogers_Centre_%28aka_Skydome%29.jpg",
+        "hours": {
+            "Monday": {
+                "start": "7:00 AM",
+                "end": "12:00 AM"
+            },
+            "Tuesday": {
+                "start": "9:00 AM",
+                "end": "1:00 AM"
+            },
+            "Wednesday": {
+                "start": "10:00 AM",
+                "end": "10:00 PM"
+            },
+            "Thursday": {
+                "start": "8:00 AM",
+                "end": "1:00 AM"
+            },
+            "Friday": {
+                "start": "7:00 AM",
+                "end": "10:00 PM"
+            },
+            "Saturday": {
+                "start": "10:00 AM",
+                "end": "1:00 AM"
+            },
+            "Sunday": {
+                "start": "8:00 AM",
+                "end": "11:00 PM"
+            }
+        }
+    },
+    {
+        "name": "Chinatown Toronto",
+        "description": "Explore the vibrant sights and flavors of Chinatown",
+        "address": "420 Spadina Ave, Toronto, ON, Canada",
+        "stars": 4.6,
+        "type": "PLACE",
+        "tags": [
+            "Chinatown",
+            "culture",
+            "food"
+        ],
+        "pictureURL": "https://live.staticflickr.com/4046/4543341054_e35eccd605_b.jpg",
+        "hours": {
+            "Monday": {
+                "start": "10:00 AM",
+                "end": "10:00 PM"
+            },
+            "Tuesday": {
+                "start": "9:00 AM",
+                "end": "12:00 AM"
+            },
+            "Wednesday": {
+                "start": "7:00 AM",
+                "end": "11:00 PM"
+            },
+            "Thursday": {
+                "start": "9:00 AM",
+                "end": "12:00 AM"
+            },
+            "Friday": {
+                "start": "10:00 AM",
+                "end": "1:00 AM"
+            },
+            "Saturday": {
+                "start": "10:00 AM",
+                "end": "1:00 AM"
+            },
+            "Sunday": {
+                "start": "7:00 AM",
+                "end": "12:00 AM"
+            }
+        }
+    }
 ]
