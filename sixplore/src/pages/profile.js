@@ -49,15 +49,16 @@ export default function Profile() {
       try {
           const resp = await fetch(`http://localhost:5000/users/${user}/getPlans`);
           const json = await resp.json();
-          console.log("Plans: ", json);
-          // const formattedEvents = json.filter((plan) => plan != null).map(plan => ({
-          //   planID: plan._id,
-          //   name: event.name,
-          //   description: event.description,
-          //   location: event.address,
-          //   genres: event.tags
-          // }));
-          setUserPlans(json);
+          // console.log("raw json", json);
+          const formattedEvents = json.filter((plan) => plan != null).map(plan => ({
+            planID: plan._id,
+            name: plan.name,
+            description: plan.description,
+            location: plan.address,
+            genres: plan.tags
+          }));
+          setUserPlans(formattedEvents);
+          // console.log("Formatted Plans: ", formattedEvents);
       } catch (error) {
           console.log("error", error);
       }
@@ -141,7 +142,6 @@ export default function Profile() {
               <div>Plans</div>
             </div> 
             <div className="profile-scaleBox3">
-              {console.log(userPlans)}
               {userPlans == null && ( 
                 <>
                 <div>
@@ -151,11 +151,10 @@ export default function Profile() {
               )}
               {userPlans?.map((Plan) => (
                 <div>
-                <h1 style={{cursor: 'pointer'}} onClick={() => clickModal(Plan._id)}> {Plan.name} </h1>
+                <h1 style={{cursor: 'pointer'}} onClick={() => clickModal(Plan.planID)}> {Plan.name} </h1>
                 <Modal isOpen={modal} onClose={exitModal}>
                   <div className="profile-modal-title">{Plan.name}</div>
                   <PlanBox planID={plan} />
-
                   <Button onClick={deletePlan} buttonColor='primary' buttonSize='btn-medium' buttonStyle='btn-primary' >
                     Delete Plan
                   </Button>

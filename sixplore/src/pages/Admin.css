@@ -16,6 +16,12 @@
     width: 400px;
     margin-left: 100px;
     margin-right: 100px;
+    display: flex;
+}
+
+.dashboard-image img{
+    height: auto;
+    width: 100%;
 }
 
 .dashboard-description{

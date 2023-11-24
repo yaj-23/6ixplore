@@ -28,7 +28,7 @@ export default function Dashboard() {
           const response = await fetch(url);
           const json = await response.json();
           setEvents(json);
-          //console.log(events);
+          console.log(events);
       } catch (error) {
           console.log("error", error);
       }
@@ -84,6 +84,7 @@ export default function Dashboard() {
             <img src={unlike} alt=""/>
           </div>
           <div className="dashboard-image">
+            { events && <img src={events[currentEvent].pictureURL} alt=""/> }
           </div>
           <div className={`dashboard-button like ${transitionLike ? 'transitionLike' : ''}`} onClick={() => showNextEvent(true)}>
             <img  onClick={likeEvent} src={like} alt=""/>

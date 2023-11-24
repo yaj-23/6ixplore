@@ -76,6 +76,7 @@ export default function Dashboard() {
             <img src={unlike} alt=""/>
           </div>
           <div className="dashboard-image">
+            { events && events.length>0 && <img src={events[currentEvent].pictureURL} alt=""/> }
           </div>
           <div className={`dashboard-button like ${transitionLike ? 'transitionLike' : ''}`} onClick={() => showNextEvent(true)}>
             <img height={100} src={approve} alt=""/>
@@ -83,7 +84,7 @@ export default function Dashboard() {
         </div>
         <div className="dashboard-description">
           {/* Here we'll map the events from the DB.. event genres are just text so thats what they'll take in when mapping the event genres */}
-          {console.log(events)}
+          {/* {console.log(events)} */}
           {events && events.length == 0 && <h1>No more event proposals</h1>}
           {events && events.length > 0 && (
             <>
