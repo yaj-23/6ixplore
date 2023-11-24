@@ -11,6 +11,8 @@ export default function SuggestEvent() {
     const [stars, setStars] = useState(5);
     const [type, setType] = useState('PLACE');
     const [tags, setTags] = useState('');
+    const [pictureURL, setPictureURL] = useState('');
+    const [hoursOfOperation, setHoursOfOperation] = useState('');
 
     const navigate = useNavigate();
 
@@ -25,7 +27,8 @@ export default function SuggestEvent() {
             address,
             stars,
             type,
-            tags: tagsArray
+            tags: tagsArray,
+            pictureURL
         }
 
         console.log("Event Object", eventObj);
@@ -56,9 +59,12 @@ export default function SuggestEvent() {
                 <div className = "signup-fields">
                     <form>
                         <input type="text" placeholder="Event Name" required value={eventName} onChange={(e) => setEventName(e.target.value)} />
+                        <input type="text" placeholder="Description" required value={description} onChange={(e) => setDescription(e.target.value)} />
                         <input type="text" placeholder="Address" required value={address} onChange={(e) => setAddress(e.target.value)} />
                         <input type="number" placeholder="Stars out of 5" required min='0' max='5' value={stars} onChange={(e) => setStars(e.target.value)} />
                         <input type="text" placeholder="Tags (comma separated)" required value={tags} onChange={(e) => setTags(e.target.value)} />
+                        <input type="text" placeholder="Picture URL" required value={pictureURL} onChange={(e) => setPictureURL(e.target.value)} />
+                        <input type="text" placeholder="Hours of Operation" required value={hoursOfOperation} onChange={(e) => setHoursOfOperation(e.target.value)} />
                     </form>
                 </div>
                 <Button buttonColor='primary' buttonSize='btn-medium' buttonStyle='btn-primary' onClick={submitForm}>

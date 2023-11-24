@@ -3,6 +3,7 @@ import './ContentBox.css'
 import Modal from '../modal/modal';
 import unlike from '../../assets/xSmall.svg'
 import { Button } from '../button/Button'
+import { useUser } from '../../UserSession'
 
 
 
@@ -11,7 +12,25 @@ export default function ContentBox({eventID, name, genres, location, image, send
     const [addPlan, setAddPlan] = useState(false);
     const [planName, setPlanName] = useState("");
     let [event, setEvent] = useState(null);
+    const {user} = useUser();
 
+    const removeLiked = () =>{
+        const eventId = eventID;
+        try {
+          const resp =  fetch(`http://localhost:5000/users/${user}-${eventId}/removeFavourite`, {
+            method: "delete",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          });
+          if (resp.ok) {
+            console.log("Removed");
+          }
+        }catch (error) {
+          console.log(error);
+          return null;
+        }
+    }
     
     const clickAddPlan = () => {
         setAddPlan(true);
@@ -19,15 +38,34 @@ export default function ContentBox({eventID, name, genres, location, image, send
         sendClickable(false);
     }
 
+    const handleAddPlan = async () => {
+        const eventId = eventID;
+        console.log("Event id", eventId);
+        try {
+            const resp =  fetch(`http://localhost:5000/users/${user}-${eventId}/addPlan`, {
+              method: "post",
+              headers: {
+                "Content-Type": "application/json",
+              },
+            });
+            if (resp.ok) {
+              console.log("Successfully added plan");
+            }
+          }catch (error) {
+            console.log(error);
+            return null;
+          }
+    };
+    
     const exitAddPlan = () => {
         setAddPlan(false);
         sendClickable(true);
     }
+
     return (
         <div className="contentBox">
             <div className="contentBox-header">
                 <div>
-                    {console.log(addPlan)}
                     {clickable && <img onClick={() => clickAddPlan()} src={unlike} style={{ cursor: 'pointer', transform: 'rotate(45deg)' }} alt=""/>}
                     <Modal isOpen={addPlan} onClose={exitAddPlan}>
                         <div className="contentBox-body">
@@ -39,16 +77,16 @@ export default function ContentBox({eventID, name, genres, location, image, send
                                     </form>
                                 </div>
                                 <div>
-                                    <Button buttonColor='primary' buttonSize='btn-medium' buttonStyle='btn-primary' >
+                                    <Button onClick={() => handleAddPlan()} buttonColor='primary' buttonSize='btn-medium' buttonStyle='btn-primary' >
                                         Add to plan
                                     </Button>
                                 </div>
                             </div>
                             <h4><strong>or click an existing plan</strong></h4>
                             <div className="contentBox-body-plans">
-                                {plans.map((Plan) => (
+                                {plans?.map((Plan) => (
                                     <div>
-                                        <h4 style={{cursor: 'pointer'}}> {Plan} </h4>
+                                        <h4 style={{cursor: 'pointer'}}> {Plan.name} </h4>
                                     </div>
                                 ))}
                             </div>
@@ -56,7 +94,7 @@ export default function ContentBox({eventID, name, genres, location, image, send
                     </Modal>
                 </div>
                 <div className="contentBox-button" >
-                <img src={unlike} alt=""/>
+                <img onClick={removeLiked} src={unlike} alt=""/>
                 </div>
             </div>
             <h4>{name}</h4>

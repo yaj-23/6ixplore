@@ -93,6 +93,7 @@ async function addDummyUserData(size){
  */
 async function addDummyExplorationData() {
     for (let item of dummyExplorationData) {
+        item.stars = 1 + util.getRandomInt(5);
         await explorationItemCalls.addExplorationItemToDB(item);
     }
 }

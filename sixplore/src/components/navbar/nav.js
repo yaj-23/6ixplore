@@ -10,10 +10,11 @@ import { useUser } from '../../UserSession'
 
 export default function Navbar() {
   const navigate = useNavigate ();
-  const {user ,setLoggedUser} = useUser();
+  const {user ,setLoggedUser, isAdmin, setAdminStatus} = useUser();
 
   const handleLogOut =() => {
     setLoggedUser(null);
+    setAdminStatus(false);
     navigate('/about');
   }
   const handleLogoClick =() => {
@@ -31,6 +32,7 @@ export default function Navbar() {
           <div className='nav-link-items'>
             {user != null && (<ul className='custom-ul'><li><Link to='/profile' className='custom-link'>profile</Link></li></ul>)}
             {user != null && (<ul className='custom-ul'><li><Link to='/dashboard' className='custom-link2' >explore</Link></li></ul>)}
+            {isAdmin == true && (<ul className='custom-ul'><li><Link to='/admin' className='custom-link' >admin</Link></li></ul>)}
             <ul className='custom-ul'><li><Link to ='/about' className='custom-link'> about</Link></li></ul>
           </div>
           { user == null && (<div className='profile-item'>

@@ -9,7 +9,8 @@ let explorationItemSchema = new Schema({
     stars: { type: Number, require: true },
     type: { type: String, enum: ['ACTIVITY', 'FOOD', 'PLACE'], require: true },
     tags: { type: [String], require: true },
-    pictureURL: { type: String, require: false }
+    pictureURL: { type: String, require: false },
+    hoursOfOperation: { type: String, require: false }
 });
 
 module.exports = mongoose.model('ExplorationItem', explorationItemSchema);
