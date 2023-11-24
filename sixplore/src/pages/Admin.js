@@ -4,6 +4,8 @@ import Navbar from "../components/navbar/nav";
 import Section from "../components/section/section";
 import unlike from '../assets/x.svg'
 import approve from '../assets/approve.png'
+import { useUser } from '../UserSession'
+import { useNavigate } from 'react-router-dom';
 
 
 export default function Dashboard() {
@@ -11,6 +13,13 @@ export default function Dashboard() {
   let [currentEvent, setCurrentEvent] = useState(0);
   let [transitionLike, setTransitionLike] = useState(false);
   let [transitionUnlike, setTransitionUnlike] = useState(false);
+
+  const navigate = useNavigate();
+  const {isAdmin} = useUser();
+
+  if (isAdmin == null) {
+    navigate('/about');
+  }
 
   useEffect(() => {
     const url = "http://localhost:5000/event-proposals";
@@ -30,7 +39,9 @@ export default function Dashboard() {
   }, [transitionLike, transitionUnlike]);
 
   const showNextEvent = (isLike) => {
-    setCurrentEvent((currentEvent) => (currentEvent + 1) % events.length);
+    if (events.length == 0) {
+      return;
+    }
     if (isLike) {
       setTransitionLike(true);
       setTimeout(() => {

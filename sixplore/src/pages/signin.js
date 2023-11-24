@@ -10,7 +10,7 @@ export default function Signin() {
   const [email, setemail] = useState('');
   const [password, setpassword] = useState('');
   let currUserId = "";
-  const {setLoggedUser} = useUser();
+  const {setLoggedUser, setAdminStatus} = useUser();
   const navigate = useNavigate();
   /**
    * 
@@ -57,6 +57,11 @@ export default function Signin() {
     currUserId = await fetchId(userInfo);
     if (currUserId) {
       setLoggedUser(currUserId);
+      if (email == "admin@gmail.com") {
+        setAdminStatus(true);
+        navigate("/admin");
+        return;
+      }
       console.log(`User has successfully logged in: ${currUserId}`);
       navigate("/dashboard");
     }
