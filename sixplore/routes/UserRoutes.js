@@ -201,7 +201,6 @@ router.post("/users/addPlan", async (req, res) => {
                 throw new Error("Recieved a plan name when plan already exists", { cause : { statusCode: 404}});
         }
         
-
         // Grabbing user
         const user = await userCalls.getUserFromDB(userId);
 
@@ -219,24 +218,33 @@ router.post("/users/addPlan", async (req, res) => {
                 }).exec();
             }
             else{
-                // Check if item to be added into given/existing plan is a dup.
 
+                // Check if recieved plan Id exist
+                const planExist = await User.findOne({ 
+                    _id: userId, 
+                    'plans._id' : planId
+                }).exec(); 
+
+                // Check if item to be added into given/existing plan exists.
                 const itemExist = await User.findOne({ 
                     _id: userId, 
                     'plans._id' : planId,
-                    'plans.planItem': { $in: [itemId] } 
+                    'plans.planItem': itemId 
                 }).exec(); 
 
-                if (itemExist) 
+                if (itemExist) // If it exists, its a duplicate so error thrown
                     throw new Error("Given plan already has this item.", { cause : { statusCode: 404}})
                 
                 // Adding the new item into item planItems array
-                await User.findByIdAndUpdate(userId,                    
-                    { $push : { 'plans.$[plan].planItem' : itemId } } ,
-                    { arrayFilters: [{ 'plan._id': planId }] }                   
-                ).exec();
+                if (planExist) {
+                    await User.findByIdAndUpdate(userId,                    
+                        { $push : { 'plans.$[plan].planItem' : itemId } } ,
+                        { arrayFilters: [{ 'plan._id': planId }] }                   
+                    ).exec();
+                }
+                else 
+                    throw new Error("Recieved plan id not found", { cause : { statusCode: 404}});                
             }
-
         }
         else // Item not found in users fav list so error thrown
             throw new Error("Item Id recieved does not exist in users favourites.", { cause : { statusCode: 404}})        
@@ -248,45 +256,94 @@ router.post("/users/addPlan", async (req, res) => {
     }
 });
 
-// router.put("/users/:userId/plans", (req, res) => {
-//     // Update a plan
-//     // TODO
-
-//     res.send("Update Plan");
-// });
-
-router.delete("/users/:userId-:itemId/deletePlan", async (req, res) => {
-
+router.delete("/users/deletePlan", async (req, res) => {
+    // Delete 
     try {
-        // Saving User Id and Item Id
-        const userId = req.params.userId;
-        const itemId = req.params.itemId;
+        const plan = req.body;
 
-        // Getting user
+        // Expected format of object being recieved
+        const bodyStruct = {
+            "userId": "",
+            "itemId": "",
+            "planId": ""
+        }
+
+        const structCheck = (expected, recieved) => {
+            const expectedKeys = Object.keys(expected).sort();
+            const recievedKeys = Object.keys(recieved).sort();
+
+            return (JSON.stringify(expectedKeys) === JSON.stringify(recievedKeys))
+        }
+        
+        // Checking for errors        
+        if (Object.keys(plan).length === 0) { // Checking if recieved object is empty
+            throw new Error("Recieved Empty object", { cause : { statusCode: 404}});
+        }
+        else {
+            if (!structCheck(bodyStruct, plan)) // Checking if recieved object is wrongly formatted
+                throw new Error("Recieved wrongly formatted Object", { cause : { statusCode: 404}});
+        }
+
+        const userId = plan.userId;
+        const itemId = plan.itemId;
+        const planId = plan.planId;
+        let deletePlanList = false;
+
+        if (userId === "") 
+            throw new Error("Recieved empty userId", { cause : { statusCode: 404}});
+
+        if (planId === "")
+            throw new Error("Recieved empty plan to be deleted", { cause : { statusCode: 404}});
+
+        if (itemId === "") {
+            if (planId === "")
+                throw new Error("Recieved empty item to be deleted", { cause : { statusCode: 404}});        
+            else
+                deletePlanList = true;
+        }
+
+        // Grabbing user
         const user = await userCalls.getUserFromDB(userId);
 
-        let planToDelete;
-
-        // If plan list empty, no need to delete
+        // Checking if User's Fav list is empty, if so no plan can be added
         if (user.plans.length === 0) {
-            throw new Error("No Plan to be deleted", { cause : { statusCode: 404}})
+            throw new Error("Empty plans list found, no plans to be deleted", { cause : { statusCode: 404}});
         }
-        else { // Checking for matching plan id
-            for (let plan of user.plans) {
-                if (plan.planItem._id.toString() === itemId) {    
-                    planToDelete = plan;
-                    break;
+        else {
+            // Checking is plan exists
+            const planExist = await User.findById({
+                _id : userId,
+                'plans._id' : planId
+            }).exec();
+
+            if (!planExist) 
+                throw new Error("Plan with this id was not found", { cause : { statusCode: 404}});            
+
+            if (deletePlanList) { // Deleting the entire plan from planList array
+                await User.findByIdAndUpdate(userId, 
+                    { $pull : { plans : { _id : planId } } } // Deleting entire plan
+                ).exec();
+            } else {
+                // Checking if item exists within recieved plan
+                const itemExist = await User.findOne({
+                    _id: userId, 
+                    'plans._id' : planId,
+                    'plans.planItem': itemId 
+                }).exec();
+
+                if (itemExist) { // Deleting item
+                    await User.findByIdAndUpdate(userId,                    
+                        { $pull : { 'plans.$[plan].planItem' : itemId } } ,
+                        { arrayFilters: [{ 'plan._id': planId }] }                   
+                    ).exec();
                 }
-            }                   
-        }
-        // Deletes Plan
-        if (planToDelete) {
-            await User.findByIdAndUpdate(userId, { $pull : { plans : planToDelete }}).exec();
-            res.send("Successfully Deleted");
-        }
-        else 
-            throw new Error("Wrong Id Sent", { cause: { statusCode : 404 }});
-        
+                else 
+                    throw new Error("Item with this id was not found", { cause : { statusCode: 404}});               
+            }
+
+        }       
+        res.send("Success"); // Sending success message
+
     } catch (error) {
         errorFunc(res, error);
     }
