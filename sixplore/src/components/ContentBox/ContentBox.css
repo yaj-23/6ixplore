@@ -23,6 +23,11 @@
     margin-left: 1rem;
 }
 
+.contentBox-image img{
+    height: 10rem;
+    width: 14rem;
+}
+
 .contentBox-body{
     display:flex;
     flex-direction: column;

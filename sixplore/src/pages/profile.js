@@ -94,9 +94,10 @@ export default function Profile() {
             name: event.name,
             description: event.description,
             location: event.address,
+            pictureURL: event.pictureURL,
             genres: event.tags
           }));
-          //console.log("Formatted Events: ", formattedEvents);
+          console.log("Formatted Events: ", formattedEvents);
           setUserEvents(formattedEvents);
           //console.log("UserEvents: ", userEvents);
       } catch (error) {
@@ -168,10 +169,10 @@ export default function Profile() {
           <div className="profile-rightDiv">
             <div className="profile-h2">Liked Destinations</div>
             <div className="profile-scaleBox2">
-              {userEvents?.map(({ eventID, name, genres, location }) => {
+              {userEvents?.map(({ eventID, name, genres, location, pictureURL }) => {
                 return (
                   <div>
-                    <ContentBox plans={userPlans} eventID={eventID} location={location} name={name} genres={genres} clickable={isClickable} sendClickable={setIsClickable} />
+                    <ContentBox plans={userPlans} eventID={eventID} image={pictureURL} location={location} name={name} genres={genres} clickable={isClickable} sendClickable={setIsClickable} />
                   </div>
                 )
               })}
