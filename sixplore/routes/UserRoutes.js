@@ -7,6 +7,8 @@ const explorationItemCalls = require('../backend/explorationItemCalls');
 
 // Mongoose Schemas
 const User = require('../models/User');
+const ExplorationItem = require('../models/ExplorationItem');
+const { Mongoose, default: mongoose } = require('mongoose');
 
 router.get("/users/:userId/getFavourites", async (req, res) => {
     // Fetch All User Favorites
@@ -147,51 +149,111 @@ router.get("/users/:userId-:planId/getPlan", async (req, res) => {
 })
 
 
-router.post("/users/:userId-:itemId/addPlan", async (req, res) => {
+router.post("/users/addPlan", async (req, res) => {
     // Update User Plan
     try {
-        // Saving User Id and Item Id
-        const userId = req.params.userId;
-        const itemId = req.params.itemId;
-        let planItem = {};
+        const newPlan = req.body;
 
-        // Getting user
+        // Expected format of object being recieved
+        const bodyStruct = {
+            "userId": "",
+            "itemId": "",
+            "planId": "",
+            "planName": ""
+        }
+
+        const structCheck = (expected, recieved) => {
+            const expectedKeys = Object.keys(expected).sort();
+            const recievedKeys = Object.keys(recieved).sort();
+
+            return (JSON.stringify(expectedKeys) === JSON.stringify(recievedKeys))
+        }
+        
+        // Checking for errors        
+        if (Object.keys(newPlan).length === 0) { // Checking if recieved object is empty
+            throw new Error("Recieved Empty object", { cause : { statusCode: 404}});
+        }
+        else {
+            if (!structCheck(bodyStruct, newPlan)) // Checking if recieved object is wrongly formatted
+                throw new Error("Recieved wrongly formatted Object", { cause : { statusCode: 404}});
+
+        }
+
+        const userId = newPlan.userId;
+        const itemId = newPlan.itemId;
+        const planId = newPlan.planId;
+        const planName = newPlan.planName;
+        let addNewPlan = false;
+
+        if (userId === "") 
+            throw new Error("Recieved empty userId", { cause : { statusCode: 404}});
+
+        if (itemId === "")
+            throw new Error("Recieved empty itemId", { cause : { statusCode: 404}});
+
+        if (planId === ""){
+            if (planName === "")
+                throw new Error("Recieved empty name for new plan", { cause : { statusCode: 404}});
+            else
+                addNewPlan = true;
+        } else {
+            if (planName !== "")
+                throw new Error("Recieved a plan name when plan already exists", { cause : { statusCode: 404}});
+        }
+        
+
+        // Grabbing user
         const user = await userCalls.getUserFromDB(userId);
 
         // Checking if User's Fav list is empty, if so no plan can be added
         if (user.favourites.length === 0) {
-            throw new Error("No Fav Item found to be added Into Plan", { cause : { statusCode: 404}})
+            throw new Error("Empty fav list found, new plans cannot be made", { cause : { statusCode: 404}})
         }
         else if (user.favourites.includes(itemId)) {
-            user.plans.forEach(plan => {
-                if (plan.planItem._id.toString() === itemId) {
-                    throw new Error("Same item found in User plans list", { cause : { statusCode: 404}})
-                }
-            })                        
-        }
+            // Creating mongoose object.
+            const itemId_m = new mongoose.Types.ObjectId(itemId); 
 
-        // Getting the item
-        const item = await explorationItemCalls.getExplorationItemFromDB(itemId);
-        planItem = {
-            name: item.name,
-            planItem: item._id
-        }
+            if (addNewPlan) { // If new plan
+                await User.findByIdAndUpdate(userId, 
+                    { $push : { plans : { name: planName, planItem: [itemId_m] } } // Pushing new plan
+                }).exec();
+            }
+            else{
+                // Check if item to be added into given/existing plan is a dup.
 
-        // Adding new plan to users list
-        await User.findByIdAndUpdate(userId, { $push : { plans : planItem } })
-        res.send("Item added successfully");
+                const itemExist = await User.findOne({ 
+                    _id: userId, 
+                    'plans._id' : planId,
+                    'plans.planItem': { $in: [itemId] } 
+                }).exec(); 
+
+                if (itemExist) 
+                    throw new Error("Given plan already has this item.", { cause : { statusCode: 404}})
+                
+                // Adding the new item into item planItems array
+                await User.findByIdAndUpdate(userId,                    
+                    { $push : { 'plans.$[plan].planItem' : itemId } } ,
+                    { arrayFilters: [{ 'plan._id': planId }] }                   
+                ).exec();
+            }
+
+        }
+        else // Item not found in users fav list so error thrown
+            throw new Error("Item Id recieved does not exist in users favourites.", { cause : { statusCode: 404}})        
+
+        res.send("Success"); // Sending success message
 
     } catch (error) {
         errorFunc(res, error);
     }
 });
 
-router.put("/users/:userId/plans", (req, res) => {
-    // Update a plan
-    // TODO
+// router.put("/users/:userId/plans", (req, res) => {
+//     // Update a plan
+//     // TODO
 
-    res.send("Update Plan");
-});
+//     res.send("Update Plan");
+// });
 
 router.delete("/users/:userId-:itemId/deletePlan", async (req, res) => {
 
@@ -272,8 +334,10 @@ module.exports = router;
  * @param {*} error 
  */
 function errorFunc(res, error){
-    if (error.name === "TypeError")
+    if (error.name === "TypeError"){
+        console.log(error);
         res.status(404).send("Wrong ID sent");
+    }
     else if (error.cause) {
         res.status(error.cause.statusCode).send(error.toString());            
     }
