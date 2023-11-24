@@ -149,4 +149,4 @@ async function getRandomExplorationItems(itemCount) {
     }
 }
 
-module.exports = { init, addDummyExplorationData }
+module.exports = { init }

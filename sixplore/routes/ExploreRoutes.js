@@ -26,14 +26,4 @@ router.get("/item/:itemid", async (req, res) => {
     }
 })
 
-router.get("/testadd", async (req, res) => {
-    // Get a unique item
-    try {
-        res.send(await db_update.addDummyExplorationData());
-    } catch (error) {
-        console.error(error.toString());
-        res.status(500).send(error.toString());
-    }
-})
-
 module.exports = router;
