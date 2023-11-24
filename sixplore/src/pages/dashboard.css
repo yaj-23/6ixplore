@@ -1,17 +1,17 @@
-.dashboard-con{
+.dashboard-con {
     margin-top: 100px;
-    display:flex;
+    display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.dashboard-con.transition{
+.dashboard-con.transition {
     opacity: 0;
     transition: opacity 400ms ease-in-out;
 }
 
-.dashboard-image{
-    background-color:lightgrey;
+.dashboard-image {
+    background-color: lightgrey;
     height: 400px;
     width: 400px;
     margin-left: 100px;
@@ -24,7 +24,7 @@
     width: 100%;
 }
 
-.dashboard-description{
+.dashboard-description {
     font-family: 'Inter';
     font-weight: 300;
     display: flex;
@@ -32,10 +32,11 @@
     align-items: center;
 }
 
-.dashboard-description h1{
+.dashboard-description h1 {
     font-weight: 400;
 }
-.dashboard-description button{
+
+.dashboard-description button {
     width: 20rem;
     padding: 10px;
     border-radius: 20px;
@@ -43,38 +44,40 @@
     margin-top: 25px;
     margin-left: 1.4rem;
 }
-.dashboard-description b{
+
+.dashboard-description b {
     font-family: 'Inter';
     font-weight: 300;
 }
 
-.dashboard-ratings{
+.dashboard-ratings {
     display: flex;
     flex-direction: row;
 }
 
-.dashboard-button{
-    -webkit-transition:  -webkit-transform .2s ease-out;
+.dashboard-button {
+    -webkit-transition: -webkit-transform .2s ease-out;
     -moz-transition: -moz-transform .2s ease-out;
     -o-transition: -o-transform .2s ease-out;
-    -ms-transition: -ms-transform .2s ease-out; 
-    transition: transform .2s ease-out; 
-}
-.dashboard-button:hover{
-    -webkit-transform:scale(1.25);
-    -moz-transform:scale(1.25);
-    -o-transform:scale(1.25);
-    transform:scale(1.25);
+    -ms-transition: -ms-transform .2s ease-out;
+    transition: transform .2s ease-out;
 }
 
-.dashboard-button.like.transitionLike{
+.dashboard-button:hover {
+    -webkit-transform: scale(1.25);
+    -moz-transform: scale(1.25);
+    -o-transform: scale(1.25);
+    transform: scale(1.25);
+}
+
+.dashboard-button.like.transitionLike {
     filter: invert(15%) sepia(100%) saturate(2476%) hue-rotate(0deg) brightness(118%) contrast(119%);
 }
 
-.dashboard-button.unlike.transitionUnlike{
+.dashboard-button.unlike.transitionUnlike {
     filter: grayscale(50%) brightness(150%);
 }
 
-.star{
+.star {
     padding: 10px 2px 2px 10px;
 }
