@@ -31,7 +31,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/about",
-    element: <HomePage/>,
+    element: <HomePage />,
   },
   {
     path: "/signin",
@@ -49,5 +49,5 @@ const router = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<AuthContextProvider>
-              <RouterProvider router={router} />
-            </AuthContextProvider>);
+  <RouterProvider router={router} />
+</AuthContextProvider>);
