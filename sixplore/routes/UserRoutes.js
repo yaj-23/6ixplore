@@ -112,6 +112,41 @@ router.get("/users/:userId/getPlans", async (req, res) => {
     }
 });
 
+
+router.get("/users/:userId-:planId/getPlan", async (req, res) => {
+    // Gets a specific user plan
+    try {
+        // Saving User Id and Item Id
+        const userId = req.params.userId;
+        const planId = req.params.planId; 
+
+        // Getting user
+        const user = await userCalls.getUserFromDB(userId);
+
+        // Plan to return
+        let userPlan = {};
+
+        // Checking is user has any plans
+        if (user.plans.length === 0) {
+            throw new Error("Empty User plan list found", { cause : { statusCode: 404}});
+        }
+        else {
+            userPlan = user.plans.find(plan => plan._id.toString() === planId);  // fetching plan            
+        }
+
+        // Checking if valid entry was returned from db
+        if (userPlan) {
+            res.send(userPlan);
+        }      
+        else
+            throw new Error("Recieved plan item not found", { cause : { statusCode: 404}});
+        
+    } catch (error) {
+        errorFunc(res, error);
+    }
+})
+
+
 router.post("/users/:userId-:itemId/addPlan", async (req, res) => {
     // Update User Plan
     try {
