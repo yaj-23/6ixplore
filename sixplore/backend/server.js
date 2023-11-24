@@ -20,7 +20,7 @@ app.use('/', authRoutes, exploreRoutes, userRoutes, adminRoutes);
 app.listen(PORT, () => {
     console.log("Server listening on port", PORT);
     try {
-        db();
+        db.init();
     } catch (error) {
         console.error(error);
         process.exit(1);
