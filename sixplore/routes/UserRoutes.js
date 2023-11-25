@@ -104,7 +104,11 @@ router.get("/users/:userId/getPlans", async (req, res) => {
         // Saving all user plan items into a list
         for (const plan of user.plans) {
             const planItem = await explorationItemCalls.getExplorationItemFromDB(plan.planItem);
-            planList.push(planItem);
+            const Plan = {
+                planId : plan._id,
+                planName : plan.name
+            }
+            planList.push(Plan);
         }
         
         // Sending back plan item list
@@ -171,11 +175,11 @@ router.post("/users/addPlan", async (req, res) => {
         
         // Checking for errors        
         if (Object.keys(newPlan).length === 0) { // Checking if recieved object is empty
-            throw new Error("Recieved Empty object", { cause : { statusCode: 404}});
+            throw new Error("Recieved Empty object", { cause : { statusCode: 400}});
         }
         else {
             if (!structCheck(bodyStruct, newPlan)) // Checking if recieved object is wrongly formatted
-                throw new Error("Recieved wrongly formatted Object", { cause : { statusCode: 404}});
+                throw new Error("Recieved wrongly formatted Object", { cause : { statusCode: 400}});
 
         }
 

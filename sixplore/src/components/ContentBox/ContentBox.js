@@ -39,24 +39,59 @@ export default function ContentBox({eventID, name, genres, location, image, send
     }
 
     const handleAddPlan = async () => {
-        const eventId = eventID;
-        console.log("Event id", eventId);
-        try {
-            const resp =  fetch(`http://localhost:5000/users/${user}-${eventId}/addPlan`, {
-              method: "post",
-              headers: {
-                "Content-Type": "application/json",
-              },
-            });
-            if (resp.ok) {
-              console.log("Successfully added plan");
-            }
-          }catch (error) {
-            console.log(error);
-            return null;
-          }
-    };
-    
+
+        const planObj = {
+            "userId": user,
+            "itemId": eventID,
+            "planId": "",
+            "planName": planName
+        }
+
+        //console.log("Plan Object", planObj);
+
+        const response = await fetch('http://localhost:5000/users/addPlan', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(planObj)
+        });
+      
+        if (response.ok) {
+            console.log('Plan object sent successfully');
+        } else {
+            console.log(response);
+            console.error('Error sending plan object');
+        }
+    }
+
+    const handleAddEventToPlan = async (planId, planName) => {
+
+        const planObj = {
+            "userId": user,
+            "itemId": eventID,
+            "planId": planId,
+            "planName": ""
+        }
+
+        console.log("Plan Object", planObj);
+
+        const response = await fetch('http://localhost:5000/users/addPlan', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(planObj)
+        });
+      
+        if (response.ok) {
+            console.log('Plan object sent successfully');
+        } else {
+            console.log(response);
+            console.error('Error sending plan object');
+        }
+    }
+
     const exitAddPlan = () => {
         setAddPlan(false);
         sendClickable(true);
@@ -86,7 +121,7 @@ export default function ContentBox({eventID, name, genres, location, image, send
                             <div className="contentBox-body-plans">
                                 {plans?.map((Plan) => (
                                     <div>
-                                        <h4 style={{cursor: 'pointer'}}> {Plan.name} </h4>
+                                        <h4 onClick={()=> handleAddEventToPlan(Plan.planID, Plan.name)} style={{cursor: 'pointer'}}> {Plan.name} </h4>
                                     </div>
                                 ))}
                             </div>

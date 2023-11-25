@@ -12,7 +12,7 @@ import PlanBox from "../components/PlanBox/PlanBox";
 export default function Profile() {
 
   let [modal, setModal] = useState(false);
-  let [plan, setPlan] = useState(null);
+  let [plan, setPlan] = useState({"planID": null, "planName": ""});
   let [isClickable, setIsClickable] = useState(true);
   let [userEvents, setUserEvents] = useState(null);
   let [userPlans, setUserPlans] = useState(null);
@@ -24,8 +24,6 @@ export default function Profile() {
   if(user == null) {
     navigate('/about');
   }
-
-
   
   const fetchUserDets = async () => {
     try{
@@ -49,30 +47,37 @@ export default function Profile() {
       try {
           const resp = await fetch(`http://localhost:5000/users/${user}/getPlans`);
           const json = await resp.json();
-          // console.log("raw json", json);
-          const formattedEvents = json.filter((plan) => plan != null).map(plan => ({
-            planID: plan._id,
-            name: plan.name,
-            description: plan.description,
-            location: plan.address,
-            genres: plan.tags
+          //console.log("raw json", json);
+          const formattedPlans = json.filter((plan) => plan != null).map(plan => ({
+            planID: plan.planId,
+            name: plan.planName,
           }));
-          setUserPlans(formattedEvents);
-          // console.log("Formatted Plans: ", formattedEvents);
+          setUserPlans(formattedPlans);
+          // console.log(user);
+          //console.log("Formatted Plans: ", formattedPlans);
       } catch (error) {
           console.log("error", error);
       }
+
     }; 
     fetchUserPlans();
   }, [userPlans]);
 
     const deletePlan = () =>{
+
+      const planObj = {
+        "userId": user,
+        "itemId" : "",
+        "planId": plan.planID,
+      }
+      
       try {
-        const resp =  fetch(`http://localhost:5000/users/${user}-${plan}/deletePlan`, {
+        const resp =  fetch(`http://localhost:5000/users/deletePlan`, {
           method: "delete",
           headers: {
             "Content-Type": "application/json",
           },
+          body: JSON.stringify(planObj)
         });
         if (resp.ok) {
           console.log("Removed");
@@ -97,7 +102,7 @@ export default function Profile() {
             pictureURL: event.pictureURL,
             genres: event.tags
           }));
-          console.log("Formatted Events: ", formattedEvents);
+          //console.log("Formatted Events: ", formattedEvents);
           setUserEvents(formattedEvents);
           //console.log("UserEvents: ", userEvents);
       } catch (error) {
@@ -108,9 +113,8 @@ export default function Profile() {
   }, [userEvents]);
 
   const clickModal = (Plan) => {
-    //console.log(modal);
     setModal(true);
-    setPlan(Plan);
+    setPlan({"planID": Plan.planID, "planName": Plan.name});
     setIsClickable(false);
   }
 
@@ -152,10 +156,10 @@ export default function Profile() {
               )}
               {userPlans?.map((Plan) => (
                 <div>
-                <h1 style={{cursor: 'pointer'}} onClick={() => clickModal(Plan.planID)}> {Plan.name} </h1>
+                <h1 style={{cursor: 'pointer'}} onClick={() => clickModal(Plan)}> {Plan.name} </h1>
                 <Modal isOpen={modal} onClose={exitModal}>
-                  <div className="profile-modal-title">{Plan.name}</div>
-                  <PlanBox planID={plan} />
+                  <div className="profile-modal-title">{plan.planName}</div>
+                  <PlanBox planID={plan.planID} />
                   <Button onClick={deletePlan} buttonColor='primary' buttonSize='btn-medium' buttonStyle='btn-primary' >
                     Delete Plan
                   </Button>
