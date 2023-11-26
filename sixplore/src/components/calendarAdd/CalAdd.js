@@ -3,23 +3,19 @@ import calPlus from '../../assets/caladd.svg';
 
 export default function CallAdd({events}) {
 
-    let eventName = events.name || '';
-    let eventLocation = events.location || '';
-    let eventDescription = events.description || '';
+    const eventName = events.name || '';
+    const eventLocation = events.address || '';
+    const eventDescription = events.description || '';
 
-    //console.log(events);
+    const newEventName = encodeURIComponent(eventName);
+    const newEventLocation = encodeURIComponent(eventLocation);
+    const newEventDescription = encodeURIComponent(eventDescription);
 
-    let newEventName = encodeURIComponent(eventName);
-    let newEventLocation = encodeURIComponent(eventLocation);
-    let newEventDescription = encodeURIComponent(eventDescription);
-    
-    console.log(newEventLocation);
-
-    let url = `https://calendar.google.com/calendar/u/0/r/eventedit?text=${newEventName}&details=${newEventLocation}&location=${newEventDescription}&sf=true&output=xml`
-    // console.log(url);
+    const url = `https://calendar.google.com/calendar/u/0/r/eventedit?text=${newEventName}&details=${newEventDescription}&location=${newEventLocation}&sf=true&output=xml`
 
     return (
         <>
+            {console.log(newEventLocation)}
             <a href={url} target="_blank" rel="nofollow">
                 <img src={calPlus} alt="Add event to your calendar." />
             </a>
