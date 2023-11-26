@@ -8,6 +8,7 @@ import { useUser } from '../UserSession';
 
 export default function HomePage() {
   const {user ,setLoggedUser} = useUser();
+  const desc = "Our app transforms urban exploration into a captivating adventure! Users can open up their phone, access our app, and swipe through an endless curated selection of unique and hidden locations, from local gems to iconic landmarks and ongoing events across Toronto.";
 
   return (
     <div>
@@ -26,7 +27,7 @@ export default function HomePage() {
           </div>
           
           <div className = "description">
-              <text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis felis vitae rhoncus congue. Morbi dictum lacinia neque, non ornare dolor ornare non. Vestibulum porttitor magna magna, a bibendum leo sagittis vitae. Fusce facilisis tincidunt justo vel viverra. Nunc non ligula sapien. Nunc tempus nisl sit amet nisl.</text>
+              <text>{desc}</text>
           </div>
 
           <div className = "buttons">
