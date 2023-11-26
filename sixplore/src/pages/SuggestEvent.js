@@ -12,7 +12,8 @@ export default function SuggestEvent() {
     const [type, setType] = useState('PLACE');
     const [tags, setTags] = useState('');
     const [pictureURL, setPictureURL] = useState('');
-    const [hoursOfOperation, setHoursOfOperation] = useState('');
+    const [hours, setHoursOfOperation] = useState('');
+    const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 
     const navigate = useNavigate();
 
@@ -20,6 +21,18 @@ export default function SuggestEvent() {
         event.preventDefault();
 
         let tagsArray = tags.split(',');
+        let hoursArray = hours.split(',').map((startEndHours) => startEndHours.trim());
+        let hoursObj = {};
+
+        for(const i in hoursArray){
+            const [start, end] = hoursArray[i].split('-');
+            const day = days[i];
+
+            hoursObj[day] = {
+                start: start ? `${start}` : 'closed',
+                end: end ? `${end}` : 'closed'
+            }
+        }
 
         const eventObj = {
             name: eventName,
@@ -27,6 +40,7 @@ export default function SuggestEvent() {
             address,
             stars,
             type,
+            hours: hoursObj,
             tags: tagsArray,
             pictureURL
         }
@@ -64,7 +78,9 @@ export default function SuggestEvent() {
                         <input type="number" placeholder="Stars out of 5" required min='0' max='5' value={stars} onChange={(e) => setStars(e.target.value)} />
                         <input type="text" placeholder="Tags (comma separated)" required value={tags} onChange={(e) => setTags(e.target.value)} />
                         <input type="text" placeholder="Picture URL" required value={pictureURL} onChange={(e) => setPictureURL(e.target.value)} />
-                        <input type="text" placeholder="Hours of Operation" required value={hoursOfOperation} onChange={(e) => setHoursOfOperation(e.target.value)} />
+                        <input type="text" placeholder="Hours of Operation" required value={hours} onChange={(e) => setHoursOfOperation(e.target.value)} />
+                        <div>hours format: start-end</div>
+                        <div>comma separated for Mon-Sun, leave nothing if closed</div>
                     </form>
                 </div>
                 <Button buttonColor='primary' buttonSize='btn-medium' buttonStyle='btn-primary' onClick={submitForm}>

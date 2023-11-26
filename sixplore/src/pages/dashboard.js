@@ -112,7 +112,7 @@ export default function Dashboard() {
                 })}
               </div>
               <button className="dashboard-collapse-btn" onClick={toggleHours}><b><u>Hours of Operation</u></b></button>
-              <Collapse className="dashboard-collapse" isOpened={operationHours}>
+              {operationHours && <Collapse className="dashboard-collapse" isOpened={operationHours}>
                 <div className="dashboard-collapse-content">
                   {
                     Object.keys(events[currentEvent].hours).map((oneKey, i) => {
@@ -135,12 +135,7 @@ export default function Dashboard() {
                   }
                 </div>
               </Collapse>
-              {/* <a data-bs-toggle="btn btn-primary" href="#dashboard-hours" role="button" aria-expanded="false" aria-controls="dashboard-hours">Hours of Operation</a>
-              <div className="collapse" id="dashboard-hours">
-                <div class="card card-body">
-                  Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
-                </div>
-              </div> */}
+              }
               <div>
                 {events[currentEvent].tags.map((d) => (
                   <>
