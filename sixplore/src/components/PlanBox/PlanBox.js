@@ -2,7 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import './PlanBox.css'
 import { useUser } from '../../UserSession'
 import unlike from '../../assets/xSmall.svg'
-
+import calPlus from '../../assets/caladd.svg'
+import CallAdd from "../calendarAdd/CalAdd";
 
 
 export default function PlanBox({planID}) {
@@ -41,10 +42,10 @@ export default function PlanBox({planID}) {
                 //console.log("user plan", json.planItem);
                 let planEventList = [];
                 for (const event of json.planItem) {
-                    //console.log(event);
                     try {
                         const resp = await fetch(`http://localhost:5000/item/${event}`);
                         const eventJson = await resp.json();
+                        //console.log(eventJson);
                         planEventList.push(eventJson);
                     } catch (error) {
                         console.log("error", error);
@@ -56,6 +57,7 @@ export default function PlanBox({planID}) {
               console.log("error", error);
           }
         }; 
+
         fetchUserPlan();
       }, [userEvents]);
 
@@ -68,8 +70,11 @@ export default function PlanBox({planID}) {
             <>
             <div className="planBox">
             <div className="planBox-header">
-                {event.name}
+                <div className="nameEvent"> 
+                  {event.name}
+                </div>
                 <div className="contentBox-button" >
+                    <CallAdd events={event} />
                     <img onClick={() => deleteEventFromPlan(event._id)} src={unlike} alt=""/>
                 </div>
             </div>

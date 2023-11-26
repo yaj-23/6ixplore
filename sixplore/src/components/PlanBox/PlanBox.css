@@ -23,3 +23,10 @@
     flex-direction: row;
     justify-content: flex-start;
 }
+
+.contentBox-button{
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 50px;
+    
+}
