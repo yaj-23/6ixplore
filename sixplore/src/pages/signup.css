@@ -2,12 +2,13 @@ body{
     position: relative;
 }
 
+
 .signup h2{
-        margin-left: 0.5rem;
-        margin-bottom: 0.7rem;
-        font-family: 'Agreement';
-        font-size: 5rem;
-    }
+    margin-left: 0.5rem;
+    margin-bottom: 0.7rem;
+    font-family: 'Allura', cursive;
+    font-size: 5.5rem;
+}
     
 .signup-fields input:focus{
         outline: none;

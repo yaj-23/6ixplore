@@ -42,6 +42,7 @@
 }
 
 .custom-ul{
+    font-family: 'Inter';
     list-style-type: none;
     transform: scale(0.8);
     transition: all 1s ease;

@@ -5,7 +5,8 @@ body{
 .signin h2{
         margin-left: 0.5rem;
         margin-bottom: 0.7rem;
-        font-family: "Agreement";
+        font-weight: 700;
+        font-family: 'Allura', cursive;        
         font-size: 5.5rem;
     }
 
@@ -25,9 +26,8 @@ body{
         margin-bottom: 5%;
         background-color: lightgrey;
         border: transparent;
-    }
-
-
+}
+    
 .signin img{
     width: 5rem;
     padding: 2px;
@@ -73,6 +73,7 @@ button{
 }
 
 .signin p{
+    font-family: "Inter";
     margin-top: 1.2%;
 }
 

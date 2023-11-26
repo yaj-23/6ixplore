@@ -19,7 +19,7 @@
 }
 
 .text1 {
-    font-family: "Latte";
+    font-family: "Inter";
     margin-top: 5%;
     font-size: clamp(1rem, 0.7rem + 4vw, 8rem);
     font-style: none;
@@ -27,7 +27,7 @@
 } 
 
 .text2 {
-    font-family: "Allura";
+    font-family: 'Allura', cursive;
     font-size: clamp(2rem, 0.7rem + 6vw, 11rem);
     font-weight: 1;
 }
@@ -41,6 +41,6 @@
     min-height: 3em;
     line-height: 1.2;
     font-size: clamp(0.82rem, 0.1rem + 0.85vw, 1.57rem);
-    font-family: 'Arial', sans-serif;
+    font-family: 'Inter', sans-serif;
     position: relative;
 }
