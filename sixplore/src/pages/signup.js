@@ -96,7 +96,7 @@ export default function Signup() {
       // Fetchig new User ID
       currUserId = await fetchId(userInfo);
       if (currUserId) {
-        alert(`User has been successfully added. The User Id is : ${currUserId}`);
+        alert(`Sign up success`);
         setLoggedUser(currUserId);
         navigate("/dashboard");
       }
