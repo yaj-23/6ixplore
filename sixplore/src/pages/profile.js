@@ -125,6 +125,7 @@ export default function Profile() {
 
   return (
     <div>
+      {console.log(isClickable)}
       <Navbar />
 
       <div className="profile" id="profile">

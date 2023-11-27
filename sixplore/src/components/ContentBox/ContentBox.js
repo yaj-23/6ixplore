@@ -65,7 +65,7 @@ export default function ContentBox({eventID, name, genres, location, image, send
         }
     }
 
-    const handleAddEventToPlan = async (planId, planName) => {
+    const handleAddEventToPlan = async (planId) => {
 
         const planObj = {
             "userId": user,
@@ -129,7 +129,7 @@ export default function ContentBox({eventID, name, genres, location, image, send
                     </Modal>
                 </div>
                 <div className="contentBox-button" >
-                <img onClick={removeLiked} src={unlike} alt=""/>
+                    {clickable  && <img onClick={removeLiked} src={unlike} alt=""/> }
                 </div>
             </div>
             <h4>{name}</h4>

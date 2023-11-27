@@ -74,7 +74,7 @@ export default function PlanBox({planID}) {
                 <div className="nameEvent"> 
                   {event.name}
                 </div>
-                <div className="contentBox-button" >
+                <div className="planBox-button" >
                   <div className="addF">
                     <CalLink events={event} />
                   </div>
