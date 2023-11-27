@@ -1,6 +1,7 @@
 # 6ixplore
 
 ## Getting Started
+This application requires Node JS. Install by going on https://nodejs.org/en/download/current
 Clone repository and head over to root directory: `6ixplore/sixplore` and run: 
 ```npm install```
 
