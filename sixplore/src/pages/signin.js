@@ -12,11 +12,7 @@ export default function Signin() {
   let currUserId = "";
   const {setLoggedUser, setAdminStatus} = useUser();
   const navigate = useNavigate();
-  /**
-   * 
-   * @param {JSON} userInfo User info in JSON format
-   * @returns User Id if success / false if fail
-   */
+
   const fetchId = async (userInfo) => {
     try {
       const resp = await fetch("http://localhost:5000/signin", {
@@ -40,13 +36,8 @@ export default function Signin() {
   };
 
   
-  /**
-   * Handles Submit Form
-   * @param {Event} event Form Data 
-   */
   const submitform = async event => { 
     event.preventDefault();
-    // Checking is user entry is valid
     
     const userInfo = {
       email : email, 

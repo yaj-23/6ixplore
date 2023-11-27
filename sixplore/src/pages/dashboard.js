@@ -59,7 +59,6 @@ export default function Dashboard() {
 
   }
 
-  // CHECK IF EVNT IS LIKED ALREADU. IF YES DONT SHOW THIS AND SKIP
   const showNextEvent = (isLike) => {
     setCurrentEvent((currentEvent) => (currentEvent + 1) % events.length);
     if (isLike) {
