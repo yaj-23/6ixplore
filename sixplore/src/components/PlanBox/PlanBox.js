@@ -4,6 +4,7 @@ import { useUser } from '../../UserSession'
 import unlike from '../../assets/xSmall.svg'
 import calPlus from '../../assets/caladd.svg'
 import CallAdd from "../calendarAdd/CalAdd";
+import CalLink from "../calendarAdd/calLink";
 
 
 export default function PlanBox({planID}) {
@@ -74,8 +75,11 @@ export default function PlanBox({planID}) {
                   {event.name}
                 </div>
                 <div className="contentBox-button" >
-                    <CallAdd events={event} />
-                    <img onClick={() => deleteEventFromPlan(event._id)} src={unlike} alt=""/>
+                  <div className="addF">
+                    <CalLink events={event} />
+                  </div>
+                  <CallAdd events={event} />
+                  <img onClick={() => deleteEventFromPlan(event._id)} src={unlike} alt=""/>
                 </div>
             </div>
             <div className="planBox-body">

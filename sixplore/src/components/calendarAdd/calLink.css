@@ -1,0 +1,22 @@
+.friendIcon {
+    max-height: 1.5rem;
+    padding: 0px;
+    display: block;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-top-left-radius: 25%;
+}
+
+.friendIcon:active {
+    box-shadow: 5px;
+    max-height: 1.55rem;
+    background-color: #ECECEC;
+}
+
+.toast-message {
+    font-size: 16px;
+    width: 20.5rem;
+    padding: 30px 20px;
+    padding: -10%;
+}

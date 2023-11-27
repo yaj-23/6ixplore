@@ -15,9 +15,8 @@ export default function CallAdd({events}) {
 
     return (
         <>
-            {console.log(newEventLocation)}
             <a href={url} target="_blank" rel="nofollow">
-                <img src={calPlus} alt="Add event to your calendar." />
+                <img src={calPlus} title="Add this event to your calendar." alt="Add event to your calendar." />
             </a>
         </>
     );

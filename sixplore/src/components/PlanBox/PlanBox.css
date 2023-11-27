@@ -27,6 +27,6 @@
 .contentBox-button{
     display: flex;
     justify-content: space-between;
-    flex-basis: 50px;
-    
+    flex-basis: 100px;
 }
+
